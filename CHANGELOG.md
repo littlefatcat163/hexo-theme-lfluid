@@ -12,6 +12,7 @@
 - label changes to bootstrap's badge
 - note alert add icon
 - tap link icon
+- base widget text color
 
 ### test
 
