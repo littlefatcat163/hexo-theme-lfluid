@@ -1,0 +1,16 @@
+@keyframes to-click
+    from
+        transform: translateX(-6px)
+        opacity: 0
+    to
+        transform: translateX(10px)
+        opacity: 1
+
+
+a.fl-nav-link
+    color: var(--bs-primary-text-emphasis)
+    text-decoration: underline
+    svg
+        color: var(--bs-warning)
+        margin-right: 1rem
+        animation: 1.2s ease-out 0.5s infinite to-click

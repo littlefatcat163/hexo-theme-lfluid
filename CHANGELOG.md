@@ -2,6 +2,7 @@
 
 ### feature
 - setup bootstrap 4 to 5
+- hexo new tag navlink
 
 ### fix
 - .btn style confict with bootstrap
