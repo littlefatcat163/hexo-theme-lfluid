@@ -1,0 +1,30 @@
+{
+  "name": "hexo-theme-lfluid",
+  "version": "1.2.0",
+  "description": "An elegant Material-Design theme for Hexo.",
+  "main": "package.json",
+  "files": [
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "_config.yml"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlefatcat163/hexo-theme-lfluid.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "lfluid",
+    "material"
+  ],
+  "author": "littlefatcat163",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "nunjucks": "^3.0.0"
+  }
+}

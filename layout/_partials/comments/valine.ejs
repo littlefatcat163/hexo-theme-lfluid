@@ -1,0 +1,23 @@
+<% if (theme.valine.appId && theme.valine.appKey) { %>
+  <div id="valine"></div>
+  <script type="text/javascript">
+    LFluid.utils.loadComments('#valine', function() {
+      LFluid.utils.createScript('<%= url_join(theme.static_prefix.valine, 'Valine.min.js') %>', function() {
+        var options = Object.assign(
+          <%- JSON.stringify(theme.valine || {}) %>,
+          {
+            el: "#valine",
+            path: <%= theme.valine.path %>
+          }
+        )
+        new Valine(options);
+        LFluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          LFluid.plugins.imageCaption(imgSelector);
+          LFluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+<% } %>

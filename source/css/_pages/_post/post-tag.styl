@@ -1,0 +1,42 @@
+// note
+.note
+  // padding 0.75rem
+  border-left 0.35rem solid
+  border-radius 0.25rem
+  margin 1.5rem 0
+  transition color .2s ease-in-out
+  font-size 0.9rem
+  a
+    color var(--text-color)
+    transition color .2s ease-in-out
+
+  *:last-child
+    margin-bottom 0
+
+// group-image
+.group-image-container
+  margin 1.5rem auto
+
+  & img
+    margin 0 auto
+    border-radius 3px
+    background-color transparent
+    box-shadow 0 3px 9px 0 rgba(0, 0, 0, 0.15), 0 3px 9px 0 rgba(0, 0, 0, 0.15)
+
+.group-image-row
+  margin-bottom .5rem
+  display flex
+  justify-content center
+
+.group-image-wrap
+  flex 1
+  display flex
+  justify-content center
+
+  &:not(:last-child)
+    margin-right .25rem
+
+// checkbox
+input[type=checkbox]
+  margin 0 0.2em 0.2em 0
+  vertical-align middle
