@@ -14,8 +14,20 @@
 
   .code-wrapper
     position relative
-    border-radius 4px
+    border-radius 8px
     margin-bottom 1rem
+    padding-top: 25px
+    background: var(--code-mac-top-bg)
+    &::before
+      background: #fc625d
+      border-radius: 50%
+      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b
+      content: ' '
+      height: 12px
+      left: 12px
+      margin-top: -15px
+      position: absolute
+      width: 12px
 
   .hljs, .highlight pre, .code-wrapper pre, figure.highlight td.gutter
     transition color .2s ease-in-out, background-color .2s ease-in-out
