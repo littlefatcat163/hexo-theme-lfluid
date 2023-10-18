@@ -1,7 +1,12 @@
-## 1.3.1
+## 1.4.0
 
 ### feature
 - note style and open second arg to using icon
+- font tag of hexo
+- extract hexo tag args func
+
+### fix
+- navbar-toggler-btn toggle event
 
 ## 1.3.0
 

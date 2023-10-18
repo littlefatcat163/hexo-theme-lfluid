@@ -52,11 +52,8 @@
 
 ## font color
 ```html
-<font class=text-primary>primary</font>
-<font class=text-info>info</font>
-<font class=text-success>success</font>
-<font class=text-warning>warning</font>
-<font class=text-danger>danger</font>
+{% font info @font %}
+{% font info gb b 2 @font %}
 ```
 
 ## multiple img

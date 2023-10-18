@@ -2,14 +2,12 @@
 
 'use strict';
 
+const { noEndingArgs } = require('../utils/hexoTagArgs');
+
 const label = (args) => {
-  args = args.join(' ').split('@');
-  const classes = args[0] || 'default';
-  const text = args[1] || '';
+  const { arr, content } = noEndingArgs(args);
 
-  !text && hexo.log.warn('[LFluid] Label text must be defined!');
-
-  return `<span class="badge text-bg-${classes.trim()}">${text}</span>`;
+  return `<span class="badge text-bg-${arr[0]}">${content}</span>`;
 };
 
 // {% label class @text %}
