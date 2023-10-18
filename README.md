@@ -77,8 +77,8 @@ primary
 info
 {% endnote %}
 
-{% note success %}
-success
+{% note success success %}
+success, 第二个参数是图标，目前仅支持 info, success, warning, danger
 {% endnote %}
 
 {% note warning %}

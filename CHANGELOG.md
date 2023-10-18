@@ -1,3 +1,8 @@
+## 1.3.1
+
+### feature
+- note style and open second arg to using icon
+
 ## 1.3.0
 
 ### feature
