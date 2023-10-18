@@ -1,5 +1,8 @@
 ## 1.4.1
 
+### feature
+- svg plus-circle-fill dash-circle-fill x
+
 ### fix
 - remove svg class lf prefix
 
