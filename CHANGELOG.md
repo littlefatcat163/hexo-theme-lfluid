@@ -1,3 +1,8 @@
+## 1.4.1
+
+### fix
+- remove svg class lf prefix
+
 ## 1.4.0
 
 ### feature

@@ -4,7 +4,7 @@
 
 const mappingIcon = (kw) => {
   if (['info', 'success', 'warning', 'danger'].some(item => item === kw)) {
-    return `<svg class="bi flex-shrink-0 me-2" role="img" width="1.2em" height="1.2em" style="margin-top: 0.2rem"><use xlink:href="#lf-${kw}"/></svg>`;
+    return `<svg class="bi flex-shrink-0 me-2" role="img" width="1.2em" height="1.2em" style="margin-top: 0.2rem"><use xlink:href="#${kw}"/></svg>`;
   }
   return '';
 }

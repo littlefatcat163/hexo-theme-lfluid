@@ -12,7 +12,7 @@ const navlink = (args) => {
       __href = `${hexo.config.root}${__href.replace('/', '')}`
   }
 
-  return `<blockquote><p><a class="fl-nav-link" href="${__href}"><svg width="32" height="32"><use xlink:href="#lf-tap-link"></use></svg> ${content}</a></p></blockquote>`;
+  return `<blockquote><p><a class="fl-nav-link" href="${__href}"><svg width="32" height="32"><use xlink:href="#tap-link"></use></svg> ${content}</a></p></blockquote>`;
 };
 
 // {% label class @text %}
