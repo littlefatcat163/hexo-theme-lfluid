@@ -2,8 +2,9 @@
 
 'use strict';
 
+
 hexo.extend.filter.register('before_generate', function() {
-  if (hexo.config.__AUTH_LNOTE === true) {
+  if (hexo.config.__AUTH_LNOTE) {
     return
   }
   process.exit()
