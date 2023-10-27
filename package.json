@@ -1,5 +1,5 @@
 {
-  "name": "hexo-theme-lfluid",
+  "name": "hexo-theme-lnote",
   "version": "1.0.0-rc",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
@@ -12,12 +12,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/littlefatcat163/hexo-theme-lfluid.git"
+    "url": "git+https://github.com/littlefatcat163/hexo-theme-lnote.git"
   },
   "keywords": [
     "hexo",
     "theme",
-    "lfluid",
+    "lnote",
     "material"
   ],
   "author": "littlefatcat163",
