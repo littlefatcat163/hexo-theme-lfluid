@@ -2,12 +2,12 @@
 import_script(`
   <script defer>
     if (document.getElementById('hbePass') || document.querySelector('hbe-prefix')) {
-      Lnote.utils.waitElementLoaded('hbe-prefix', function() {
+      LNote.utils.waitElementLoaded('hbe-prefix', function() {
         var hbePrefix = document.querySelector('hbe-prefix');
         hbePrefix.parentElement.classList.add('markdown-body');
-        Lnote.utils.retry(function() {
-          if (Lnote.boot && Lnote.boot.refresh) {
-            Lnote.boot.refresh();
+        LNote.utils.retry(function() {
+          if (LNote.boot && LNote.boot.refresh) {
+            LNote.boot.refresh();
             return true;
           }
         }, 100, 10);

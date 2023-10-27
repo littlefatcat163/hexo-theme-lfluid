@@ -38,7 +38,7 @@ module.exports = (hexo) => {
           }
         });
     } else {
-      hexo.log.error(`[Lnote] highlightjs style '${name}' not found`);
+      hexo.log.error(`[LNote] highlightjs style '${name}' not found`);
       return {};
     }
     if (backgroundColor === 'white' || backgroundColor === '#ffffff') {
@@ -62,7 +62,7 @@ module.exports = (hexo) => {
       file = resolveModule('prism-themes', `themes/${cssName}.css`);
     }
     if (!fs.existsSync(file)) {
-      hexo.log.error(`[Lnote] prismjs style '${name}' not found`);
+      hexo.log.error(`[LNote] prismjs style '${name}' not found`);
       return {};
     }
     return { file };

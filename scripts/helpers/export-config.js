@@ -28,7 +28,7 @@ hexo.extend.helper.register('export_config', function () {
   };
   const globalLnote = { version: lnote_version };
   return `<script id="lnote-configs">
-    var LNote = window.Lnote || ${JSON.stringify(globalLnote)};
+    var LNote = window.LNote || ${JSON.stringify(globalLnote)};
     var CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;
 });

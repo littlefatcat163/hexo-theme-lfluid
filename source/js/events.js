@@ -1,4 +1,4 @@
-/* global Lnote */
+/* global LNote */
 
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
@@ -6,7 +6,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-Lnote.events = {
+LNote.events = {
 
   registerNavbarEvent: function() {
     var navbar = jQuery('#navbar');
@@ -18,7 +18,7 @@ Lnote.events = {
       navbar.removeClass('navbar-dark');
       submenu.removeClass('navbar-dark');
     }
-    Lnote.utils.listenScroll(function() {
+    LNote.utils.listenScroll(function() {
       navbar[navbar.offset().top > 50 ? 'addClass' : 'removeClass']('top-nav-collapse');
       submenu[navbar.offset().top > 50 ? 'addClass' : 'removeClass']('dropdown-collapse');
       if (navbar.offset().top > 0) {
@@ -61,7 +61,7 @@ Lnote.events = {
         });
       }
     };
-    Lnote.utils.listenScroll(parallax);
+    LNote.utils.listenScroll(parallax);
   },
 
   registerScrollDownArrowEvent: function() {
@@ -70,7 +70,7 @@ Lnote.events = {
       return;
     }
     scrollbar.on('click', function() {
-      Lnote.utils.scrollToElement('#board', -jQuery('#navbar').height());
+      LNote.utils.scrollToElement('#board', -jQuery('#navbar').height());
     });
   },
 
@@ -106,7 +106,7 @@ Lnote.events = {
     jQuery(window).resize(setTopArrowPos);
     // Display
     var headerHeight = board.offset().top;
-    Lnote.utils.listenScroll(function() {
+    LNote.utils.listenScroll(function() {
       var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
       scrollDisplay = scrollHeight >= headerHeight;
       topArrow.css({
@@ -151,15 +151,15 @@ Lnote.events = {
   },
 
   registerRefreshCallback: function(callback) {
-    if (!Array.isArray(Lnote.events._refreshCallbacks)) {
-      Lnote.events._refreshCallbacks = [];
+    if (!Array.isArray(LNote.events._refreshCallbacks)) {
+      LNote.events._refreshCallbacks = [];
     }
-    Lnote.events._refreshCallbacks.push(callback);
+    LNote.events._refreshCallbacks.push(callback);
   },
 
   refresh: function() {
-    if (Array.isArray(Lnote.events._refreshCallbacks)) {
-      for (var callback of Lnote.events._refreshCallbacks) {
+    if (Array.isArray(LNote.events._refreshCallbacks)) {
+      for (var callback of LNote.events._refreshCallbacks) {
         if (callback instanceof Function) {
           callback();
         }

@@ -1,22 +1,22 @@
-/* global Lnote */
+/* global LNote */
 
-Lnote.boot = {};
+LNote.boot = {};
 
-Lnote.boot.registerEvents = function() {
-  Lnote.events.billboard();
-  Lnote.events.registerNavbarEvent();
-  Lnote.events.registerParallaxEvent();
-  Lnote.events.registerScrollDownArrowEvent();
-  Lnote.events.registerScrollTopArrowEvent();
-  Lnote.events.registerImageLoadedEvent();
+LNote.boot.registerEvents = function() {
+  LNote.events.billboard();
+  LNote.events.registerNavbarEvent();
+  LNote.events.registerParallaxEvent();
+  LNote.events.registerScrollDownArrowEvent();
+  LNote.events.registerScrollTopArrowEvent();
+  LNote.events.registerImageLoadedEvent();
 };
 
-Lnote.boot.refresh = function() {
-  Lnote.plugins.fancyBox();
-  Lnote.plugins.codeWidget();
-  Lnote.events.refresh();
+LNote.boot.refresh = function() {
+  LNote.plugins.fancyBox();
+  LNote.plugins.codeWidget();
+  LNote.events.refresh();
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  Lnote.boot.registerEvents();
+  LNote.boot.registerEvents();
 });

@@ -92,7 +92,7 @@
   }
 
   function addCount(Counter) {
-    var enableIncr = CONFIG.web_analytics.enable && !Lnote.ctx.dnt && validHost();
+    var enableIncr = CONFIG.web_analytics.enable && !LNote.ctx.dnt && validHost();
     var getterArr = [];
     var incrArr = [];
 

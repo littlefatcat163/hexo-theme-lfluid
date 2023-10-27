@@ -14,7 +14,7 @@
   <%- partial('_partials/plugins/fancybox.ejs') %>
 <% } %>
 <% if (theme.post.image_caption.enable) { %>
-  <% import_script('<script>Lnote.plugins.imageCaption();</script>') %>
+  <% import_script('<script>LNote.plugins.imageCaption();</script>') %>
 <% } %>
 <% if (theme.post.math.enable && (!theme.post.math.specific || (theme.post.math.specific && page.math))) { %>
   <%- partial('_partials/plugins/math.ejs') %>

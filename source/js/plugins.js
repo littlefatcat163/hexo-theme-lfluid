@@ -1,4 +1,4 @@
-/* global Lnote, CONFIG */
+/* global LNote, CONFIG */
 
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
@@ -6,7 +6,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-Lnote.plugins = {
+LNote.plugins = {
 
   typing: function(text) {
     if (!('Typed' in window)) { return; }
@@ -105,7 +105,7 @@ Lnote.plugins = {
     }
 
     function getBgClass(ele) {
-      return Lnote.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+      return LNote.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
     }
 
     var copyTmpl = '';

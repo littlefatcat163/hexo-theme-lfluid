@@ -1,4 +1,4 @@
-/* global Lnote */
+/* global LNote */
 
 /**
  * Modified from https://blog.skk.moe/post/hello-darkmode-my-old-friend/
@@ -162,7 +162,7 @@
         );
       } else {
         // 如果图标不存在则说明图标还没加载出来，等到页面全部加载再尝试切换
-        Lnote.utils.waitElementLoaded(colorToggleIconSelector, function() {
+        LNote.utils.waitElementLoaded(colorToggleIconSelector, function() {
           var iconElement = document.querySelector(colorToggleIconSelector);
           if (iconElement) {
             iconElement.setAttribute(
@@ -206,7 +206,7 @@
     setTimeout(function() {
       // 设置代码块组件样式
       document.querySelectorAll('.markdown-body pre').forEach((pre) => {
-        var cls = Lnote.utils.getBackgroundLightness(pre) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+        var cls = LNote.utils.getBackgroundLightness(pre) >= 0 ? 'code-widget-light' : 'code-widget-dark';
         var widget = pre.querySelector('.code-widget-light, .code-widget-dark');
         if (widget) {
           widget.classList.remove('code-widget-light', 'code-widget-dark');
@@ -254,7 +254,7 @@
   // 当页面加载时，将显示模式设置为 localStorage 中自定义的值（如果有的话）
   applyCustomColorSchemaSettings();
 
-  Lnote.utils.waitElementLoaded(colorToggleIconSelector, function() {
+  LNote.utils.waitElementLoaded(colorToggleIconSelector, function() {
     applyCustomColorSchemaSettings();
     var button = document.querySelector(colorToggleButtonSelector);
     if (button) {

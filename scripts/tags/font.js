@@ -2,7 +2,7 @@
 
 'use strict';
 
-const { noEndingArgs } = require('hexo-theme-lfluid/scripts/utils/hexoTagArgs');
+const { noEndingArgs } = require('hexo-theme-lnote/scripts/utils/hexoTagArgs');
 
 const hasKeyword = (arr, kw) => {
   return arr.some(item => item === kw)

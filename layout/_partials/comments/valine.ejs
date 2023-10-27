@@ -1,8 +1,8 @@
 <% if (theme.valine.appId && theme.valine.appKey) { %>
   <div id="valine"></div>
   <script type="text/javascript">
-    Lnote.utils.loadComments('#valine', function() {
-      Lnote.utils.createScript('<%= url_join(theme.static_prefix.valine, 'Valine.min.js') %>', function() {
+    LNote.utils.loadComments('#valine', function() {
+      LNote.utils.createScript('<%= url_join(theme.static_prefix.valine, 'Valine.min.js') %>', function() {
         var options = Object.assign(
           <%- JSON.stringify(theme.valine || {}) %>,
           {
@@ -11,10 +11,10 @@
           }
         )
         new Valine(options);
-        Lnote.utils.waitElementVisible('#valine .vcontent', () => {
+        LNote.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
-          Lnote.plugins.imageCaption(imgSelector);
-          Lnote.plugins.fancyBox(imgSelector);
+          LNote.plugins.imageCaption(imgSelector);
+          LNote.plugins.fancyBox(imgSelector);
         })
       });
     });

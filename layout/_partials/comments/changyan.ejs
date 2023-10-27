@@ -1,8 +1,8 @@
 <% if (theme.changyan.appid) { %>
   <div id="SOHUCS" sid='<%= page.permalink %>'></div>
   <script type="text/javascript">
-    Lnote.utils.loadComments('#SOHUCS', function() {
-      Lnote.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
+    LNote.utils.loadComments('#SOHUCS', function() {
+      LNote.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
         window.changyan.api.config(<%- JSON.stringify(theme.changyan || {}) %>)
       });
     });

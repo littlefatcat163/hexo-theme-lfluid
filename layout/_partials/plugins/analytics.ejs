@@ -3,7 +3,7 @@
   <% if(theme.web_analytics.baidu) { %>
     <!-- Baidu Analytics -->
     <script async>
-      if (!Lnote.ctx.dnt) {
+      if (!LNote.ctx.dnt) {
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
@@ -18,8 +18,8 @@
   <% if (theme.web_analytics.google){ %>
     <!-- Google tag (gtag.js) -->
     <script async>
-      if (!Lnote.ctx.dnt) {
-        Lnote.utils.createScript("https://www.googletagmanager.com/gtag/js?id=<%= theme.web_analytics.google.measurement_id %>", function() {
+      if (!LNote.ctx.dnt) {
+        LNote.utils.createScript("https://www.googletagmanager.com/gtag/js?id=<%= theme.web_analytics.google.measurement_id %>", function() {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
@@ -34,7 +34,7 @@
   <% if(theme.web_analytics.tencent && theme.web_analytics.tencent.sid && theme.web_analytics.tencent.cid) { %>
     <!-- Tencent Analytics -->
     <script async>
-      if (!Lnote.ctx.dnt) {
+      if (!LNote.ctx.dnt) {
         var _mtac = {};
         (function() {
           var mta = document.createElement("script");
@@ -54,8 +54,8 @@
   <% if(theme.web_analytics.woyaola) { %>
     <!-- 51.la Analytics -->
     <script async>
-      if (!Lnote.ctx.dnt) {
-        Lnote.utils.createScript('//js.users.51.la/<%= theme.web_analytics.woyaola %>.js');
+      if (!LNote.ctx.dnt) {
+        LNote.utils.createScript('//js.users.51.la/<%= theme.web_analytics.woyaola %>.js');
       }
     </script>
   <% } %>
@@ -63,8 +63,8 @@
   <% if(theme.web_analytics.cnzz) { %>
     <!-- cnzz Analytics -->
     <script async>
-      if (!Lnote.ctx.dnt) {
-        Lnote.utils.createScript('//s4.cnzz.com/z_stat.php?id=<%= theme.web_analytics.cnzz %>&show=pic');
+      if (!LNote.ctx.dnt) {
+        LNote.utils.createScript('//s4.cnzz.com/z_stat.php?id=<%= theme.web_analytics.cnzz %>&show=pic');
       }
     </script>
   <% } %>
