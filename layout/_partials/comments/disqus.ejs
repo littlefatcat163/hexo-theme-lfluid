@@ -3,9 +3,9 @@
     <div id="disqus_thread"></div>
     <% if (theme.disqus.disqusjs) { %>
       <script>
-        LFluid.utils.loadComments('#disqus_thread', function() {
-          LFluid.utils.createCssLink('<%= url_join(theme.static_prefix.disqusjs, 'disqusjs.css') %>');
-          LFluid.utils.createScript('<%= url_join(theme.static_prefix.disqusjs, 'disqus.js') %>', function() {
+        Lnote.utils.loadComments('#disqus_thread', function() {
+          Lnote.utils.createCssLink('<%= url_join(theme.static_prefix.disqusjs, 'disqusjs.css') %>');
+          Lnote.utils.createScript('<%= url_join(theme.static_prefix.disqusjs, 'disqus.js') %>', function() {
             new DisqusJS({
               shortname: '<%= theme.disqus.shortname %>',
               apikey: '<%= theme.disqus.apikey %>'
@@ -19,7 +19,7 @@
           this.page.url = '<%= page.permalink %>';
           this.page.identifier = '<%= url_for(page.path) %>';
         };
-        LFluid.utils.loadComments('#disqus_thread', function() {
+        Lnote.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
           s.src = '//' + '<%= theme.disqus.shortname %>' + '.disqus.com/embed.js';
           s.setAttribute('data-timestamp', new Date());

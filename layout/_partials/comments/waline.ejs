@@ -1,9 +1,9 @@
 <% if (theme.waline.serverURL) { %>
   <div id="waline"></div>
   <script type="text/javascript">
-    LFluid.utils.loadComments('#waline', function() {
-      LFluid.utils.createCssLink('<%= url_join(theme.static_prefix.waline, 'waline.min.css') %>')
-      LFluid.utils.createScript('<%= url_join(theme.static_prefix.waline, 'waline.min.js') %>', function() {
+    Lnote.utils.loadComments('#waline', function() {
+      Lnote.utils.createCssLink('<%= url_join(theme.static_prefix.waline, 'waline.min.css') %>')
+      Lnote.utils.createScript('<%= url_join(theme.static_prefix.waline, 'waline.min.js') %>', function() {
         var options = Object.assign(
           <%- JSON.stringify(theme.waline || {}) %>,
           {
@@ -12,10 +12,10 @@
           }
         )
         Waline.init(options);
-        LFluid.utils.waitElementVisible('#waline .vcontent', () => {
+        Lnote.utils.waitElementVisible('#waline .vcontent', () => {
           var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          LFluid.plugins.imageCaption(imgSelector);
-          LFluid.plugins.fancyBox(imgSelector);
+          Lnote.plugins.imageCaption(imgSelector);
+          Lnote.plugins.fancyBox(imgSelector);
         })
       });
     });

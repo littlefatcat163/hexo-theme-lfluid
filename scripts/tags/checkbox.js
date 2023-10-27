@@ -7,7 +7,7 @@ const checkbox = (args) => {
   args = args.join(' ').split(',');
   const text = (args[0] || '').trim();
 
-  !text && hexo.log.warn('[LFluid] Checkbox text must be defined!');
+  !text && hexo.log.warn('[Lnote] Checkbox text must be defined!');
 
   if (text === 'checked' || text === 'true' || text === 'false') {
     const checked = text === 'checked' || text === 'true';

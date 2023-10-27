@@ -25,6 +25,7 @@
     "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "nunjucks": "^3.0.0"
+    "nunjucks": "^3.0.0",
+    "lnote-cmds": "^1.0.0-rc.1"
   }
 }

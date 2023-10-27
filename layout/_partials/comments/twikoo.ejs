@@ -1,18 +1,18 @@
 <% if (theme.twikoo && theme.twikoo.envId) { %>
   <div id="twikoo"></div>
   <script type="text/javascript">
-    LFluid.utils.loadComments('#comments', function() {
-      LFluid.utils.createScript('<%= url_join(theme.static_prefix.twikoo, 'twikoo.all.min.js') %>', function() {
+    Lnote.utils.loadComments('#comments', function() {
+      Lnote.utils.createScript('<%= url_join(theme.static_prefix.twikoo, 'twikoo.all.min.js') %>', function() {
         var options = Object.assign(
           <%- JSON.stringify(theme.twikoo || {}) %>,
           {
             el: '#twikoo',
             path: '<%= theme.twikoo.path %>',
             onCommentLoaded: function() {
-              LFluid.utils.listenDOMLoaded(function() {
+              Lnote.utils.listenDOMLoaded(function() {
                 var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
-                LFluid.plugins.imageCaption(imgSelector);
-                LFluid.plugins.fancyBox(imgSelector);
+                Lnote.plugins.imageCaption(imgSelector);
+                Lnote.plugins.fancyBox(imgSelector);
               });
             }
           }

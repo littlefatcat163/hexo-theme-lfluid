@@ -1,9 +1,9 @@
 <script>
-  LFluid.utils.createScript('<%= url_join(theme.static_prefix.mermaid, 'mermaid.min.js') %>', function() {
+  Lnote.utils.createScript('<%= url_join(theme.static_prefix.mermaid, 'mermaid.min.js') %>', function() {
     mermaid.initialize(<%- JSON.stringify(theme.post.mermaid.options || {}) %>);
 
-    LFluid.utils.listenDOMLoaded(function() {
-      LFluid.events.registerRefreshCallback(function() {
+    Lnote.utils.listenDOMLoaded(function() {
+      Lnote.events.registerRefreshCallback(function() {
         if ('mermaid' in window) {
           mermaid.init();
         }

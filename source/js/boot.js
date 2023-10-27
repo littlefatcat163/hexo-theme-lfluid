@@ -1,22 +1,22 @@
-/* global LFluid */
+/* global Lnote */
 
-LFluid.boot = {};
+Lnote.boot = {};
 
-LFluid.boot.registerEvents = function() {
-  LFluid.events.billboard();
-  LFluid.events.registerNavbarEvent();
-  LFluid.events.registerParallaxEvent();
-  LFluid.events.registerScrollDownArrowEvent();
-  LFluid.events.registerScrollTopArrowEvent();
-  LFluid.events.registerImageLoadedEvent();
+Lnote.boot.registerEvents = function() {
+  Lnote.events.billboard();
+  Lnote.events.registerNavbarEvent();
+  Lnote.events.registerParallaxEvent();
+  Lnote.events.registerScrollDownArrowEvent();
+  Lnote.events.registerScrollTopArrowEvent();
+  Lnote.events.registerImageLoadedEvent();
 };
 
-LFluid.boot.refresh = function() {
-  LFluid.plugins.fancyBox();
-  LFluid.plugins.codeWidget();
-  LFluid.events.refresh();
+Lnote.boot.refresh = function() {
+  Lnote.plugins.fancyBox();
+  Lnote.plugins.codeWidget();
+  Lnote.events.refresh();
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  LFluid.boot.registerEvents();
+  Lnote.boot.registerEvents();
 });

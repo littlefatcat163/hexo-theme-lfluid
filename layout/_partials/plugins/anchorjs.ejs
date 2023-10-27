@@ -1,7 +1,7 @@
 <%
 import_script(`
 <script>
-  LFluid.utils.createScript('${ url_join(theme.static_prefix.anchor, 'anchor.min.js') }', function() {
+  Lnote.utils.createScript('${ url_join(theme.static_prefix.anchor, 'anchor.min.js') }', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
@@ -19,7 +19,7 @@ import_script(`
     }
     window.anchors.add(res.join(', '));
 
-    LFluid.events.registerRefreshCallback(function() {
+    Lnote.events.registerRefreshCallback(function() {
       if ('anchors' in window) {
         anchors.removeAll();
         var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');

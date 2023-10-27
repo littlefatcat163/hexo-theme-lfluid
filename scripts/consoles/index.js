@@ -1,4 +1,4 @@
-const lnoteEachUtil = require('lnote-scripts/dist/lnote-eachUtil.cjs')
+const lnoteEachUtil = require('lnote-cmds/dist/lnote-eachUtil.cjs')
 
 hexo.extend.console.register(
   "bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614",

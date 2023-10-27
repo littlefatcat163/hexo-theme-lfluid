@@ -17,9 +17,9 @@ module.exports = (hexo) => {
       dataConfig = data.fluid_config;
     } else if (!configFromRoot(hexo)) {
       if (isZh) {
-        hexo.log.warn('请使用 [LFluid] 最新版本');
+        hexo.log.warn('请使用 [Lnote] 最新版本');
       } else {
-        hexo.log.warn('[LFluid] It is recommended that you use override configuration: https://hexo.fluid-dev.com/docs/en/guide/#override-configuration');
+        hexo.log.warn('Please [Lnote] install lateset version');
       }
     }
     if (data && isNotEmptyObject(data.fluid_static_prefix)) {
@@ -50,9 +50,9 @@ module.exports = (hexo) => {
         mergeLang(language);
       }
       if (isZh) {
-        hexo.log.debug('[LFluid] 读取 source/_data/languages/*.yml 文件覆盖语言配置');
+        hexo.log.debug('[Lnote] 读取 source/_data/languages/*.yml 文件覆盖语言配置');
       } else {
-        hexo.log.debug('[LFluid] Merge language config from source/_data/languages/*.yml');
+        hexo.log.debug('[Lnote] Merge language config from source/_data/languages/*.yml');
       }
     }
   }
@@ -60,31 +60,31 @@ module.exports = (hexo) => {
   if (isNotEmptyObject(hexo.config.theme_config)) {
     hexo.theme.config = objUtil.merge({}, hexo.theme.config, hexo.config.theme_config);
     if (isZh) {
-      hexo.log.debug('[LFluid] 读取 _config.yml 中 theme_config 配置项覆盖主题配置');
+      hexo.log.debug('[Lnote] 读取 _config.yml 中 theme_config 配置项覆盖主题配置');
     } else {
-      hexo.log.debug('[LFluid] Merge theme config from theme_config in _config.yml');
+      hexo.log.debug('[Lnote] Merge theme config from theme_config in _config.yml');
     }
   }
 
   if (isNotEmptyObject(dataStaticConfig)) {
     hexo.theme.config.static_prefix = objUtil.merge({}, hexo.theme.config.static_prefix, dataStaticConfig);
     if (isZh) {
-      hexo.log.debug('[LFluid] 读取 source/_data/fluid_static_prefix.yml 文件覆盖主题配置');
+      hexo.log.debug('[Lnote] 读取 source/_data/fluid_static_prefix.yml 文件覆盖主题配置');
     } else {
-      hexo.log.debug('[LFluid] Merge theme config from source/_data/fluid_static_prefix.yml');
+      hexo.log.debug('[Lnote] Merge theme config from source/_data/fluid_static_prefix.yml');
     }
   }
 
   if (isNotEmptyObject(dataConfig)) {
     hexo.theme.config = objUtil.merge({}, hexo.theme.config, dataConfig);
     if (isZh) {
-      hexo.log.debug('[LFluid] 读取 source/_data/fluid_config.yml 文件覆盖主题配置');
+      hexo.log.debug('[Lnote] 读取 source/_data/fluid_config.yml 文件覆盖主题配置');
     } else {
-      hexo.log.debug('[LFluid] Merge theme config from source/_data/fluid_config.yml');
+      hexo.log.debug('[Lnote] Merge theme config from source/_data/fluid_config.yml');
     }
   }
 
-  hexo.log.debug('[LFluid] Output theme config:\n', JSON.stringify(hexo.theme.config, undefined, 2));
+  hexo.log.debug('[Lnote] Output theme config:\n', JSON.stringify(hexo.theme.config, undefined, 2));
 };
 
 const configFromRoot = (hexo) => {

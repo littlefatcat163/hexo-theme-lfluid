@@ -1,8 +1,8 @@
-/* global LFluid, CONFIG */
+/* global Lnote, CONFIG */
 
 window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 
-LFluid.utils = {
+Lnote.utils = {
 
   listenScroll: function(callback) {
     var dbc = new Debouncer(callback);
@@ -56,8 +56,8 @@ LFluid.utils = {
     offsetFactor = offsetFactor && offsetFactor >= 0 ? offsetFactor : 0;
 
     function waitInViewport(element) {
-      LFluid.utils.listenDOMLoaded(function() {
-        if (LFluid.utils.elementVisible(element, offsetFactor)) {
+      Lnote.utils.listenDOMLoaded(function() {
+        if (Lnote.utils.elementVisible(element, offsetFactor)) {
           callback();
           return;
         }
@@ -73,9 +73,9 @@ LFluid.utils = {
           });
           io.observe(element);
         } else {
-          var wrapper = LFluid.utils.listenScroll(function() {
-            if (LFluid.utils.elementVisible(element, offsetFactor)) {
-              LFluid.utils.unlistenScroll(wrapper);
+          var wrapper = Lnote.utils.listenScroll(function() {
+            if (Lnote.utils.elementVisible(element, offsetFactor)) {
+              Lnote.utils.unlistenScroll(wrapper);
               callback();
             }
           });
@@ -110,7 +110,7 @@ LFluid.utils = {
       });
       mo.observe(document, { childList: true, subtree: true });
     } else {
-      LFluid.utils.listenDOMLoaded(function() {
+      Lnote.utils.listenDOMLoaded(function() {
         var waitLoop = function() {
           var ele = document.querySelector(selector);
           if (ele) {
@@ -166,7 +166,7 @@ LFluid.utils = {
         loadFunc();
         ele.removeAttribute('lazyload');
       };
-      LFluid.utils.waitElementVisible(selector, callback, CONFIG.lazyload.offset_factor);
+      Lnote.utils.waitElementVisible(selector, callback, CONFIG.lazyload.offset_factor);
     } else {
       loadFunc();
     }

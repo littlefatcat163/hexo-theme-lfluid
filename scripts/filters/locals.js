@@ -9,7 +9,7 @@ hexo.extend.filter.register('template_locals', locals => {
   const { __ } = locals;
   const { i18n } = hexo.theme;
   locals.hexo_version = env.version;
-  locals.lfluid_version = require(path.normalize(path.join(hexo.theme_dir, 'package.json'))).version;
+  locals.lnote_version = require(path.normalize(path.join(hexo.theme_dir, 'package.json'))).version;
   locals.title = __('title') !== 'title' ? __('title') : config.title;
   locals.subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle;
   locals.author = __('author') !== 'author' ? __('author') : config.author;
