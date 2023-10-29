@@ -2,14 +2,6 @@
 
 'use strict';
 
-
-hexo.extend.filter.register('before_generate', function() {
-  if (hexo.config.__AUTH_LNOTE) {
-    return
-  }
-  process.exit()
-})
-
 // 生成前过滤文章
 hexo.extend.filter.register('before_generate', function() {
   this._bindLocals();

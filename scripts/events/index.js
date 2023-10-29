@@ -10,7 +10,3 @@ hexo.on('generateBefore', () => {
   require('./lib/lazyload')(hexo);
   require('./lib/footnote')(hexo);
 });
-
-/* hexo.on('generateAfter', () => {
-  require('./lib/hello')(hexo);
-}); */
