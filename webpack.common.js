@@ -37,14 +37,10 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     plugins: [
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['dist/**/*'],
-            verbose: true,
-            dry: false
-        }),
-        new webpack.DefinePlugin({
+        new CleanWebpackPlugin(),
+        /* new webpack.DefinePlugin({
             'import.meta.resolve': 'require.resolve'
-        }),
+        }), */
         /* new webpack.BannerPlugin({
             banner: 'Copyright (c) 2023 littlefatcat163',
             exclude: /node_modules/

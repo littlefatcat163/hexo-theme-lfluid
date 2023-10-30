@@ -1,8 +1,9 @@
-import path from 'path'
-import fs from 'fs'
+// import path from 'path'
+// import fs from 'fs'
+import pkgInfo from '../../package.json'
 import { urlJoin } from '../utils/url-join'
 
-let baseDirVersion: string
+/* let baseDirVersion: string
 
 function getBaseDirVersion() {
     if (baseDirVersion == null) {
@@ -13,19 +14,19 @@ function getBaseDirVersion() {
         }
     }
     return baseDirVersion
-}
+} */
 
 hexo.extend.helper.register('export_config', function () {
     // @ts-ignore
     const { config } = this
-    const baseDirVersion = getBaseDirVersion()
+    // const baseDirVersion = getBaseDirVersion()
     // @ts-ignore
     const theme = this.theme as any
     const exportConfig = {
         hostname:
             new URL(config.url).searchParams.get('hostname') || config.url,
         root: config.root,
-        version: baseDirVersion,
+        version: pkgInfo.version,
         typing: theme.fun_features.typing,
         anchorjs: theme.fun_features.anchorjs,
         progressbar: theme.fun_features.progressbar,
@@ -39,7 +40,7 @@ hexo.extend.helper.register('export_config', function () {
         search_path: urlJoin(config.root, theme.search.path),
         include_content_in_search: theme.search.content,
     }
-    const globalLnote = { version: baseDirVersion }
+    const globalLnote = { version: pkgInfo.version }
     return `<script id="lnote-configs">
     var LNote = window.LNote || ${JSON.stringify(globalLnote)};
     var CONFIG = ${JSON.stringify(exportConfig)};

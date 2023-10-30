@@ -11,8 +11,8 @@ const note = (args: string[], content?: string) => {
     const iconHTML = mappingIcon(iconType)
     if (iconHTML != '') {
         return `<div class="note alert alert-${alertType} d-flex align-items-top" role="alert">
+            ${iconHTML}
             <div>
-            ${mappingIcon(iconType)}
             ${hexo.render
                 .renderSync({ text: content, engine: 'markdown' })
                 .split('\n')
@@ -21,7 +21,7 @@ const note = (args: string[], content?: string) => {
           </div>`
     }
     return `<div class="note alert alert-${alertType}" role="alert">
-            ${mappingIcon(iconType)}
+            ${iconHTML}
             ${hexo.render
                 .renderSync({ text: content, engine: 'markdown' })
                 .split('\n')
