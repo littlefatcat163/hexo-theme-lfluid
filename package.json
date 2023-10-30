@@ -1,12 +1,12 @@
 {
   "name": "hexo-theme-lnote",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
   "files": [
     "languages",
     "layout",
-    "scripts",
+    "scripts/*.js",
     "source",
     "_config.yml"
   ],
