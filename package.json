@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-lnote",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
   "files": [
@@ -17,10 +17,6 @@
     "dev": "npx webpack --watch --config webpack.dev.js",
     "build": "npx webpack --config webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/littlefatcat163/hexo-theme-lnote.git"
-  },
   "keywords": [
     "hexo",
     "theme",
@@ -32,7 +28,6 @@
     "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "lnote-cmds": "^1.0.0-rc.1",
     "nunjucks": "^3.0.0"
   },
   "devDependencies": {
