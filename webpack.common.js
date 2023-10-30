@@ -44,7 +44,11 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'import.meta.resolve': 'require.resolve'
-        })
+        }),
+        /* new webpack.BannerPlugin({
+            banner: 'Copyright (c) 2023 littlefatcat163',
+            exclude: /node_modules/
+        }) */
         // new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })
     ]
 }
