@@ -5,11 +5,11 @@ const webpack = require('webpack')
 module.exports = {
     target: 'node',
     entry: {
-        'lnote-extends': './src/index.ts'
+        'index': './src/index.ts'
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'scripts'),
         clean: true,
         library: {
             type: 'commonjs'
