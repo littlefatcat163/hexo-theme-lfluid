@@ -8,8 +8,19 @@ const mappingIcon = (kw: string) => {
 const note = (args: string[], content?: string) => {
     const alertType = args[0] || 'info'
     const iconType = args[1]
-
-    return `<div class="note alert alert-${alertType} d-flex align-items-top" role="alert">
+    const iconHTML = mappingIcon(iconType)
+    if (iconHTML != '') {
+        return `<div class="note alert alert-${alertType} d-flex align-items-top" role="alert">
+            <div>
+            ${mappingIcon(iconType)}
+            ${hexo.render
+                .renderSync({ text: content, engine: 'markdown' })
+                .split('\n')
+                .join('')}
+            </div>
+          </div>`
+    }
+    return `<div class="note alert alert-${alertType}" role="alert">
             ${mappingIcon(iconType)}
             ${hexo.render
                 .renderSync({ text: content, engine: 'markdown' })
