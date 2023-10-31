@@ -62,6 +62,11 @@
 ![](/img/xx.jpg)
 ![](/img/xx.jpg)
 {% endgi %}
+
+{% gi same %}
+![](/img/xx.jpg)
+![](/img/xx.jpg)
+{% endgi %}
 ```
 
 ## tag
