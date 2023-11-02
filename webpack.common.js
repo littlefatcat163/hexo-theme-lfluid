@@ -22,7 +22,9 @@ module.exports = {
         'hexo-pagination': 'hexo-pagination',
         css: 'css',
         nunjucks: 'nunjucks',
-        systeminformation: 'systeminformation'
+        systeminformation: 'systeminformation',
+        vue: 'vue',
+        '@vue/server-renderer': '@vue/server-renderer'
     },
     module: {
         rules: [

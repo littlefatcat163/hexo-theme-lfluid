@@ -838,7 +838,7 @@ declare namespace Hexo {
         interface Tag {
             register(
                 name: string,
-                fn: (args: string[], content: string | undefined) => string,
+                fn: (args: string[], content: string | undefined) => string | Promise<string>,
                 options?: Tag.Options
             ): void
         }

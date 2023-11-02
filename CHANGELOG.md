@@ -1,7 +1,7 @@
 ## 1.0.2
 
 ### Added
-- mycomponents tag
+- templates tag support ejs and vue
 
 ## 1.0.1
 

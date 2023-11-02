@@ -6,6 +6,7 @@ hexo.extend.console.register(start.cmdName, async function (args) {
     try {
         await validateLicenses(hexo.config.lnote_licenses)
         hexo.config.__AUTH_LNOTE = true
+        hexo.config.__DEV_ENV = true
         hexo.call(start.callName, args)
     } catch (error) {
         console.log(error)
