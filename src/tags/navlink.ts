@@ -12,5 +12,5 @@ const navlink = (args: string[]) => {
     return `<blockquote><p><a class="ln-nav-link" href="${__href}"><svg width="32" height="32"><use xlink:href="#tap-link"></use></svg> ${content}</a></p></blockquote>`
 }
 
-// {% label class @text %}
+// {% navlink href @text %}
 hexo.extend.tag.register('navlink', navlink, { ends: false })

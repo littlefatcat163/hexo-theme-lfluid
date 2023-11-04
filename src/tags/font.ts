@@ -31,4 +31,5 @@ const font = (args: string[]) => {
     )}" style="padding: 0 0.25rem">${content}</font>`
 }
 
+// {% font warning b @text %}
 hexo.extend.tag.register('font', font, { ends: false })
