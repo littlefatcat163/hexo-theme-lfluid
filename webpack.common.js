@@ -24,7 +24,8 @@ module.exports = {
         nunjucks: 'nunjucks',
         systeminformation: 'systeminformation',
         vue: 'vue',
-        '@vue/server-renderer': '@vue/server-renderer'
+        '@vue/server-renderer': '@vue/server-renderer',
+        'this-file': 'this-file'
     },
     module: {
         rules: [

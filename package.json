@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-lnote",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
   "files": [
@@ -57,6 +57,7 @@
     "yaml": "^2.3.3"
   },
   "dependencies": {
+    "this-file": "^2.0.3",
     "vue": "^3.3.7"
   }
 }
