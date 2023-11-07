@@ -25,7 +25,7 @@ module.exports = {
         systeminformation: 'systeminformation',
         vue: 'vue',
         '@vue/server-renderer': '@vue/server-renderer',
-        'this-file': 'this-file'
+        'lnote-esm': 'lnote-esm'
     },
     module: {
         rules: [

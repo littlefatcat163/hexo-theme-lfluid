@@ -2,6 +2,7 @@ import { validateLicenses, hexoConsoleEnc } from 'create-lnote/src/generate'
 
 const { start, build } = hexoConsoleEnc()
 
+// process.argv 可以看到参数
 hexo.extend.console.register(start.cmdName, async function (args) {
     try {
         await validateLicenses(hexo.config.lnote_licenses)
