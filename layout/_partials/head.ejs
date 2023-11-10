@@ -38,5 +38,8 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <%- partial('_partials/css.ejs') %>
   <%- export_config() %>
 
+  <script src="<%= url_for('js/utils.js') %>"></script>
+  <script src="<%= url_for('js/color-schema.js') %>"></script>
+
   <%- inject_point('head') %>
 </head>

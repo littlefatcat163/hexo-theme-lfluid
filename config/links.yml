@@ -7,9 +7,6 @@ js:
   - //lib.baomitu.com/typed.js/2.0.12/typed.min.js
   - //cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js
   - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js
-  - utils.js
-  - color-schema.js
-  # - img-lazyload.js
   - local-search.js
   - events.js
 

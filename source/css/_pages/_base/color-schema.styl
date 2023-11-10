@@ -1,5 +1,5 @@
 :root
-  --color-mode "light"
+  // --color-mode "light"
   --body-bg-color $body-bg-color
   --board-bg-color #fff
   --text-color $text-color
@@ -57,17 +57,19 @@ dark-colors()
     background-color transparent
     transition background-color .2s ease-in-out
 
+
 @media (prefers-color-scheme: dark)
-  :root
-    --color-mode "dark"
-
-  :root:not([data-bs-theme])
+  :root[data-bs-theme=dark]
     dark-colors()
+    // --color-mode "dark"
 
-@media not print
+  /* :root([data-bs-theme="dark"])
+    dark-colors() */
+
+/* @media not print
   [data-bs-theme="dark"]
     dark-colors()
 
 @media print
   :root
-    --color-mode "light"
+    --color-mode "light" */
