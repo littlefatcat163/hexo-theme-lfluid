@@ -1,6 +1,6 @@
 /* global LNote, CONFIG */
 
-window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+// window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 
 LNote.utils = {
 
@@ -166,7 +166,7 @@ LNote.utils = {
         loadFunc();
         ele.removeAttribute('lazyload');
       };
-      LNote.utils.waitElementVisible(selector, callback, CONFIG.lazyload.offset_factor);
+      LNote.utils.waitElementVisible(selector, callback, 2);
     } else {
       loadFunc();
     }

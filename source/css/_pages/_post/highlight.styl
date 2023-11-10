@@ -5,36 +5,35 @@
   pre code.hljs
     padding 0
 
-  pre[class*="language-"]
-    padding-top 1.45rem
-    padding-bottom 1.45rem
-    padding-right 1rem
-    line-height 1.5
-    margin-bottom 1rem
-
-  .code-wrapper
+  .highlight
     position relative
     border-radius 8px
-    margin-bottom 1rem
-    padding-top: 25px
-    background: var(--code-mac-top-bg)
+    padding-top: 28px
+    background-color: var(--code-mac-top-bg)
     &::before
       background: #fc625d
       border-radius: 50%
-      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b
+      box-shadow: 1.2em 0 #fdbc40, 2.4em 0 #35cd4b
       content: ' '
-      height: 12px
-      left: 12px
-      margin-top: -15px
+      height: 0.8em
+      width: 0.8em
+      left: 0.8em
+      margin-top: -1.2em
       position: absolute
-      width: 12px
-
-  .hljs, .highlight pre, .code-wrapper pre, figure.highlight td.gutter
-    transition color .2s ease-in-out, background-color .2s ease-in-out
-    background-color var(--highlight-bg-color)
-
-pre[class*=language-].line-numbers
-  position initial
+    .btn-clipboard
+      position: absolute
+      top: 0.3em
+      right: 0.5em
+      cursor: pointer
+      z-index: 2
+      border: 0
+      background-color: transparent
+      padding: 0
+      line-height: 1
+    table
+      background-color: var(--code-mac-body-bg)
+      table-layout: fixed
+      width: 100%
 
 figure
   margin 1rem 0
@@ -60,10 +59,7 @@ figure.highlight
 
   td.gutter
     display table-cell
-    position -webkit-sticky
-    position sticky
-    left 0
-    z-index 1
+    width: 3em
 
     pre
       text-align right

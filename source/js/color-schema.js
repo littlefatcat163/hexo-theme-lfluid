@@ -5,7 +5,7 @@
  */
 (function(window, document) {
   var rootElement = document.documentElement;
-  var colorSchemaStorageKey = 'Fluid_Color_Scheme';
+  var colorSchemaStorageKey = 'Lnote_Color_Scheme';
   var colorSchemaMediaQueryKey = '--color-mode';
   var userColorSchemaAttributeName = 'data-bs-theme';
   var defaultColorSchemaAttributeName = 'data-default-color-scheme';

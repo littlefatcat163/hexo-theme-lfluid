@@ -1,0 +1,46 @@
+css: 
+  - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css
+  - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css
+  - main.css
+js:
+  - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js
+  - //lib.baomitu.com/typed.js/2.0.12/typed.min.js
+  - //cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js
+  - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js
+  - utils.js
+  - color-schema.js
+  # - img-lazyload.js
+  - local-search.js
+  - events.js
+
+# 文章标题生成目录导航栏
+tocbot:
+  js:
+    - //cdn.bootcdn.net/ajax/libs/tocbot/4.9.1/tocbot.min.js
+    - post/toc.js
+
+# 复制代码
+clipboard:
+  js:
+    - //lib.baomitu.com/clipboard.js/latest/clipboard.min.js
+    - post/copying-code.js
+
+# 图片放大
+viewerjs:
+  css:
+    - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.css
+  js:
+    - //lib.baomitu.com/viewerjs/1.11.6/viewer.js
+    - post/view-imgs.js
+
+fancybox:
+  css:
+    - //lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css
+  js:
+    - //lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js
+
+
+# 开启功能，如 bootstrap popver
+enable:
+  js:
+    - post/enable.js

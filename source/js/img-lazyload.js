@@ -5,6 +5,6 @@
     LNote.utils.waitElementVisible(each, function() {
       each.removeAttribute('srcset');
       each.removeAttribute('lazyload');
-    }, CONFIG.lazyload.offset_factor);
+    }, 2);
   }
 })(window, document);
