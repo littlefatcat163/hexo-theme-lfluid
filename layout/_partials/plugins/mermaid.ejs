@@ -1,16 +1,4 @@
 <% if (page.mermaid) { %>
-  <script>
-    LNote.utils.createScript('<%= url_join(theme.static_prefix.mermaid, 'mermaid.min.js') %>', function() {
-      mermaid.initialize({theme: 'dark'});
-  
-      LNote.utils.listenDOMLoaded(function() {
-        LNote.events.registerRefreshCallback(function() {
-          if ('mermaid' in window) {
-            mermaid.init();
-          }
-        });
-      });
-    });
-  </script>
+  <%- post_html_link('mermaid') %>
 <% } %>
 

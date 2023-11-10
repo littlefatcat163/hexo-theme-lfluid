@@ -146,7 +146,7 @@
   var searchSelector = '#local-search-input';
   var resultSelector = '#local-search-result';
   modal.on('show.bs.modal', function() {
-    var path = CONFIG.root + 'local-search.xml';
+    var path = LNote.root + 'local-search.xml';
     localSearchFunc(path, searchSelector, resultSelector);
   });
   modal.on('shown.bs.modal', function() {

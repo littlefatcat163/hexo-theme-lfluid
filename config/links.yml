@@ -36,6 +36,12 @@ fancybox:
   js:
     - //lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js
 
+# 流程图
+mermaid:
+  js:
+    - //lib.baomitu.com/mermaid/10.6.1/mermaid.min.js
+    - post/mermaiding.js
+
 
 # 开启功能，如 bootstrap popver
 enable:
