@@ -25,7 +25,8 @@ module.exports = {
         systeminformation: 'systeminformation',
         vue: 'vue',
         '@vue/server-renderer': '@vue/server-renderer',
-        'lnote-esm': 'lnote-esm'
+        'lnote-esm': 'lnote-esm',
+        nunjucks: 'nunjucks'
     },
     module: {
         rules: [

@@ -4,9 +4,6 @@
 
 hexo.extend.generator.register('_hexo_generator_search', function(locals) {
   const config = this.theme.config;
-  if (!config.search.enable) {
-    return;
-  }
 
   const nunjucks = require('nunjucks');
   const env = new nunjucks.Environment();
@@ -33,9 +30,8 @@ hexo.extend.generator.register('_hexo_generator_search', function(locals) {
   const searchTmplSrc = pathFn.join(hexo.theme_dir, './source/xml/local-search.xml');
   const searchTmpl = nunjucks.compile(fs.readFileSync(searchTmplSrc, 'utf8'), env);
 
-  const searchConfig = config.search;
-  let searchField = searchConfig.field;
-  const content = searchConfig.content && true;
+  let searchField = 'post'
+  const content = true
 
   let posts, pages;
 

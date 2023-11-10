@@ -1,13 +1,12 @@
-hexo.extend.generator.register('_hexo_generator_search', function (locals) {
-    const config = hexo.theme.config
-    if (!config.search.enable) {
-        return
-    }
+import nunjucks from 'nunjucks'
+import pathFn from 'path'
+import fs from 'fs'
 
-    const nunjucks = require('nunjucks')
+hexo.extend.generator.register('_hexo_generator_search', function (locals) {
+    // @ts-ignore
+    const config = this.theme.config
+
     const env = new nunjucks.Environment()
-    const pathFn = require('path')
-    const fs = require('fs')
 
     env.addFilter('uriencode', function (str: string) {
         return encodeURI(str)
@@ -35,9 +34,8 @@ hexo.extend.generator.register('_hexo_generator_search', function (locals) {
         env
     )
 
-    const searchConfig = config.search
-    let searchField = searchConfig.field
-    const content = searchConfig.content && true
+    let searchField = 'post'
+    const content = true
 
     let posts, pages
 
@@ -64,7 +62,7 @@ hexo.extend.generator.register('_hexo_generator_search', function (locals) {
     })
 
     return {
-        path: searchConfig.generate_path || '/local-search.xml',
+        path: '/local-search.xml',
         data: xml,
     }
 })

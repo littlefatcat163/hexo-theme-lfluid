@@ -15,25 +15,9 @@ page.banner_mask_alpha = 0.3
         <div id="board">
           <article class="post-content mx-auto">
             <h1 id="seo-header"><%= page.subtitle || page.title %></h1>
-            <% if (theme.post.updated.enable && theme.post.updated && compare_date(page.date, page.updated)) { %>
-              <p class="alert alert-<%= theme.post.updated.note_class || 'info' %>">
-                <% if (theme.post.updated.relative) { %>
-                  <% if (theme.post.updated.content) { %>
-                    <!-- compatible with older versions-->
-                    <%- theme.post.updated.content %><%- relative_date(page.updated, theme.post.updated.date_format) %>
-                  <% } else { %>
-                    <%- __('post.updated', relative_date(page.updated, theme.post.updated.date_format)) %>
-                  <% } %>
-                <% } else { %>
-                  <% if (theme.post.updated.content) { %>
-                    <!-- compatible with older versions-->
-                    <%- theme.post.updated.content %><%- date(page.updated, theme.post.updated.date_format) %>
-                  <% } else { %>
-                    <%- __('post.updated', date(page.updated, theme.post.updated.date_format)) %>
-                  <% } %>
-                <% } %>
-              </p>
-            <% } %>
+            <p class="alert alert-info">
+              <%- __('post.updated', date(page.updated, 'LLLL')) %>
+            </p>
             <% if (page.encrypt === true) { %>
               <%- inject_point('postMarkdownBegin') %>
               <%- page.content %>
@@ -54,7 +38,7 @@ page.banner_mask_alpha = 0.3
 
               <%- inject_point('postCopyright') %>
 
-              <% if (theme.post.prev_next.enable && !page.hide) { %>
+              <% if (!page.hide) { %>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     <% const prev = prev_post(page) %>

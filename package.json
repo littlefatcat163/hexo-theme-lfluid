@@ -1,12 +1,13 @@
 {
   "name": "hexo-theme-lnote",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
   "files": [
     "languages",
     "layout",
-    "scripts/*.js",
+    "scripts",
+    "config",
     "source",
     "_config.yml"
   ],
@@ -39,6 +40,7 @@
     "@types/jest": "^29.5.6",
     "@types/minimist": "^1.2.4",
     "@types/node": "^20.8.9",
+    "@types/nunjucks": "^3.2.6",
     "@types/underscore": "^1.11.12",
     "clean-webpack-plugin": "^4.0.0",
     "compare-versions": "^6.1.0",
