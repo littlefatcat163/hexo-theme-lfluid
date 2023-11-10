@@ -35,30 +35,6 @@ hexo.extend.filter.register(
             'default',
             path.join(hexo.theme_dir, 'layout/_partials/post/meta-bottom.ejs')
         )
-        if (hexo.theme.config.post.copyright.enable) {
-            injects.postCopyright.file(
-                'default',
-                path.join(hexo.theme_dir, 'layout/_partials/post/copyright.ejs')
-            )
-        }
-        if (hexo.theme.config.post.comments.enable) {
-            injects.postComments.file(
-                'default',
-                path.join(hexo.theme_dir, 'layout/_partials/comments.ejs')
-            )
-        }
-
-        injects.pageComments.file(
-            'default',
-            path.join(hexo.theme_dir, 'layout/_partials/comments.ejs')
-        )
-
-        if (hexo.theme.config.links.comments.enable) {
-            injects.linksComments.file(
-                'default',
-                path.join(hexo.theme_dir, 'layout/_partials/comments.ejs')
-            )
-        }
     },
     -99
 )

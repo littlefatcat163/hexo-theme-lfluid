@@ -2,8 +2,6 @@
 
 'use strict';
 
-const urlJoin = require('../utils/url-join');
-
 /**
  * Export theme config to js
  */

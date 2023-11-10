@@ -1,6 +1,6 @@
 'use strict';
 
-const urlJoin = require('../../utils/url-join');
+// const urlJoin = require('../../utils/url-join');
 
 module.exports = (hexo) => {
   const config = hexo.theme.config;
