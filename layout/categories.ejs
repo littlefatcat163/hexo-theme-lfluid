@@ -1,11 +1,12 @@
 <%
 page.layout = 'categories'
-page.title = theme.category.title || __('category.title')
-page.subtitle = theme.category.subtitle || __('category.subtitle')
-page.banner_img = theme.category.banner_img
-page.banner_img_height = theme.category.banner_img_height
-page.banner_mask_alpha = theme.category.banner_mask_alpha
-var orderBy = theme.category.order_by || 'name'
+page.title = __('category.title')
+page.subtitle = __('category.subtitle')
+page.banner_img = theme.banner_img
+page.banner_img_height = 60
+page.banner_mask_alpha = 0.3
+// 排序，前面带减号是倒序，不带减号是正序
+var orderBy = '-length' || 'name'
 var curCats = site.categories.find({ parent: { $exists: false } }).sort(orderBy).filter(cat => cat.length)
 %>
 
@@ -13,7 +14,7 @@ var curCats = site.categories.find({ parent: { $exists: false } }).sort(orderBy)
   curCats: curCats,
   params: {
     orderBy: orderBy,
-    postLimit  : theme.category.post_limit,
-    postOrderBy: theme.category.post_order_by || config.index_generator.order_by
+    postLimit  : 10,
+    postOrderBy: orderBy || config.index_generator.order_by
   }
 }) %>

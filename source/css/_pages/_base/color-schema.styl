@@ -1,7 +1,7 @@
 :root
   --color-mode "light"
   --body-bg-color $body-bg-color
-  --board-bg-color $board-bg-color
+  --board-bg-color #fff
   --text-color $text-color
   --sec-text-color $sec-text-color
   --post-text-color $post-text-color
@@ -24,7 +24,7 @@
 
 dark-colors()
   --body-bg-color $body-bg-color-dark
-  --board-bg-color $board-bg-color-dark
+  --board-bg-color #212529
   --text-color $text-color-dark
   --sec-text-color $sec-text-color-dark
   --post-text-color $post-text-color-dark
@@ -57,18 +57,17 @@ dark-colors()
     background-color transparent
     transition background-color .2s ease-in-out
 
-if (hexo-config("dark_mode.enable"))
-  @media (prefers-color-scheme: dark)
-    :root
-      --color-mode "dark"
+@media (prefers-color-scheme: dark)
+  :root
+    --color-mode "dark"
 
-    :root:not([data-bs-theme])
-      dark-colors()
+  :root:not([data-bs-theme])
+    dark-colors()
 
-  @media not print
-    [data-bs-theme="dark"]
-      dark-colors()
+@media not print
+  [data-bs-theme="dark"]
+    dark-colors()
 
-  @media print
-    :root
-      --color-mode "light"
+@media print
+  :root
+    --color-mode "light"

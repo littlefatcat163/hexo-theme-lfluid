@@ -2,9 +2,9 @@
 page.layout = "category"
 page.title = [__('category.title'), page.category].join(" - ")
 page.subtitle = [__('category.subtitle'), page.category].join(" - ")
-page.banner_img = theme.category.banner_img
-page.banner_img_height = theme.category.banner_img_height
-page.banner_mask_alpha = theme.category.banner_mask_alpha
+page.banner_img = theme.banner_img
+page.banner_img_height = 60
+page.banner_mask_alpha = 0.3
 
 var cat = site.categories.find({name: page.category}).filter(cat => cat.length).data[0]
 %>

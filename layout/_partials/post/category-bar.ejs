@@ -12,7 +12,7 @@ filterIds.push(page._id)
   params: {
     type     : 'post',
     filterIds: filterIds,
-    postLimit: theme.post.category_bar.post_limit,
-    postOrderBy: theme.post.category_bar.post_order_by || config.index_generator.order_by
+    postLimit: 10,
+    postOrderBy: '-date'
   }
 }) %>

@@ -2,9 +2,9 @@
 page.layout = "tag"
 page.title = [__('tag.title'), page.tag].join(" - ")
 page.subtitle = [__('tag.subtitle'), page.tag].join(" - ")
-page.banner_img = theme.tag.banner_img
-page.banner_img_height = theme.tag.banner_img_height
-page.banner_mask_alpha = theme.tag.banner_mask_alpha
+page.banner_img = theme.banner_img
+page.banner_img_height = 80
+page.banner_mask_alpha = 0.3
 
 var tag = site.tags.find({name: page.tag}).filter(tag => tag.length).data[0]
 %>

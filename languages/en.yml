@@ -46,7 +46,7 @@ post:
   meta:
     wordcount: '%s words'
     min2read: '%s mins'
-    views: '{} views'
+    views: ' views'
   copyright:
     author: 'Author'
     posted: 'Posted on'

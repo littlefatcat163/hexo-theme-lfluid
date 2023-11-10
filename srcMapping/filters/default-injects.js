@@ -15,7 +15,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   if (hexo.theme.config.post.copyright.enable) {
     injects.postCopyright.file('default', path.join(hexo.theme_dir, 'layout/_partials/post/copyright.ejs'));
   }
-  if (hexo.theme.config.post.comments.enable) {
+  /* if (hexo.theme.config.post.comments.enable) {
     injects.postComments.file('default', path.join(hexo.theme_dir, 'layout/_partials/comments.ejs'));
   }
 
@@ -23,5 +23,5 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
   if (hexo.theme.config.links.comments.enable) {
     injects.linksComments.file('default', path.join(hexo.theme_dir, 'layout/_partials/comments.ejs'));
-  }
+  } */
 }, -99);

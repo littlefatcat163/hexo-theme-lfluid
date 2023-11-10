@@ -1,4 +1,3 @@
-/* global CONFIG */
 
 (function() {
   // Modified from [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
@@ -63,7 +62,7 @@
             var index_content = -1;
             var first_occur = -1;
             // Skip matching when content is included in search and content is empty
-            if (CONFIG.include_content_in_search && data_content === '') {
+            if (data_content === '') {
               isMatch = false;
             } else {
               keywords.forEach(function (keyword, i) {
@@ -147,7 +146,7 @@
   var searchSelector = '#local-search-input';
   var resultSelector = '#local-search-result';
   modal.on('show.bs.modal', function() {
-    var path = CONFIG.search_path || '/local-search.xml';
+    var path = CONFIG.root + 'local-search.xml';
     localSearchFunc(path, searchSelector, resultSelector);
   });
   modal.on('shown.bs.modal', function() {

@@ -46,7 +46,7 @@ post:
   meta:
     wordcount: '%s 字'
     min2read: '%s 分钟'
-    views: '{} 次'
+    views: ' 次'
   copyright:
     author: '作者'
     posted: '发布于'

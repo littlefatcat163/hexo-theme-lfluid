@@ -1,7 +1,7 @@
 <%
-page.banner_img = page.banner_img || theme.post.banner_img
-page.banner_img_height = page.banner_img_height || theme.post.banner_img_height
-page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
+page.banner_img = page.banner_img || theme.banner_img
+page.banner_img_height = 60
+page.banner_mask_alpha = 0.3
 %>
 
 <div class="container-fluid nopadding-x">
@@ -91,14 +91,3 @@ page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
     </div>
   </div>
 </div>
-
-<%- partial('_partials/markdown-plugins') %>
-
-<% if(theme.post.custom && theme.post.custom.enable && theme.post.custom.content && page.custom !== false) { %>
-  <!-- Custom -->
-  <div class="col-lg-7 mx-auto nopadding-x-md">
-    <div class="container custom post-custom mx-auto">
-      <%- page.custom || theme.post.custom.content %>
-    </div>
-  </div>
-<% } %>
