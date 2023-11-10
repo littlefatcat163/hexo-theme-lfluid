@@ -1,6 +1,7 @@
 import './date'
 import './engine'
 import './export-config'
+import './html-link'
 import './injects'
 import './my'
 import './page'
