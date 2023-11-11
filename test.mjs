@@ -57,4 +57,12 @@ async function test() {
     console.log(s) */
 }
 
-test()
+// test()
+
+function testFs() {
+    const res = fs.existsSync('global.d.ts')
+    // fs.statSync('test.vue')
+    console.log(res)
+}
+
+testFs()

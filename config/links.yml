@@ -27,7 +27,7 @@ viewerjs:
   css:
     - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.css
   js:
-    - //lib.baomitu.com/viewerjs/1.11.6/viewer.js
+    - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.js
     - post/view-imgs.js
 
 fancybox:

@@ -1,20 +1,21 @@
 {
   "name": "hexo-theme-lnote",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
   "files": [
     "languages",
     "layout",
-    "scripts",
+    "scripts/*.js",
     "config",
     "source",
-    "_config.yml"
+    "_config.yml",
+    "templates"
   ],
   "scripts": {
     "test": "jest --coverage --silent --watchAll=false",
     "unit": "jest --watchAll",
-    "unit-spec": "jest --watchAll --verbose ./src/__test__/generate.test.ts",
+    "unit-spec": "jest --watchAll --verbose ./src/utils/__test__/vueTsr.test.ts",
     "dev": "npx webpack --watch --config webpack.dev.js",
     "build": "npx webpack --config webpack.config.js"
   },
