@@ -2,17 +2,16 @@ import path from 'path'
 import { readYml } from '../utils/ymlConf'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
-const n = (args: string[]) => {
+const noun = (args: string[]) => {
     const [kw] = args
-    const tmpPath = path.join(hexo.theme_dir, 'templates', 'n.vue')
-    const dataPath = path.join(hexo.base_dir, 'data', 'n')
+    const tmpPath = path.join(hexo.theme_dir, 'templates', 'noun.vue')
+    const dataPath = path.join(hexo.base_dir, 'data', 'noun')
     const data = readYml(dataPath, true)
     const vueStr = readVue(tmpPath)
     if (data == null || vueStr == null) {
         return '-'
     }
     const mapping = data[kw]
-    console.log('---', mapping)
     if (mapping == null) {
         return '-'
     }
@@ -25,4 +24,4 @@ const n = (args: string[]) => {
 }
 
 // {% n key %}
-hexo.extend.tag.register('n', n, { ends: false, async: true })
+hexo.extend.tag.register('noun', noun, { ends: false, async: true })
