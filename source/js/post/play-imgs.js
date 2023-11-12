@@ -48,6 +48,12 @@
                             '<use xlink:href="#chevron-right"></use>' +
                           '</svg>' +
                         '</button>'
+        },
+        mobile: {
+          // protect: false,
+          clickSlide: 'close',
+          dblclickContent: 'zoom',
+          dblclickSlide: 'zoom'
         }
       });
 })()
