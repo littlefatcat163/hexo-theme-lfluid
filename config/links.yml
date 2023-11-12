@@ -30,6 +30,7 @@ viewerjs:
     - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.js
     - post/view-imgs.js
 
+# https://kangkai124.github.io/fancybox/
 fancybox:
   css:
     - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css

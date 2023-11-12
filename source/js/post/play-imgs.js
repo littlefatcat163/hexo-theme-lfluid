@@ -30,11 +30,24 @@
         buttons : [
             // 'slideShow',
             // 'fullScreen',
-            'thumbs',
+            // 'thumbs',
             // 'share',
             //'download',
-            'zoom',
+            // 'zoom',
             'close'
-        ]
+        ],
+        dblclickContent: 'zoom',
+        btnTpl: {
+          arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+                        '<svg width="18" height="18">' +
+                          '<use xlink:href="#chevron-left"></use>' +
+                        '</svg>' +
+                      '</button>',
+          arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+                          '<svg width="18" height="18">' +
+                            '<use xlink:href="#chevron-right"></use>' +
+                          '</svg>' +
+                        '</button>'
+        }
       });
 })()
