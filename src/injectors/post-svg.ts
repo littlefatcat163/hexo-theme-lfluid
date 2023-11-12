@@ -11,8 +11,7 @@ const targetSVG = () => {
     for (let key in res) {
         svgs.push(createSymbol(key, res[key]))
     }
-    return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;overflow:hidden;width:0;height:0">
-<defs>${svgs.join('\n')}</defs></svg>`
+    return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;overflow:hidden;width:0;height:0"><defs>${svgs.join('')}</defs></svg>`
 }
 
 hexo.extend.injector.register('body_begin', targetSVG, 'post')

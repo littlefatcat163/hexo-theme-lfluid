@@ -2,7 +2,7 @@
     <div>
         <h1 v-if="abc">test</h1>
         {{ message }}
-        <div v-for="item in arr"></div>
+        <span v-html="hh"></span>
     </div>
 </template>
 
@@ -10,6 +10,7 @@
 const message = 123
 const abc = true
 const arr = []
+const hh = ''
 </script>
 
 

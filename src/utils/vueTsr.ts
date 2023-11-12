@@ -17,3 +17,7 @@ export function readVue(filePath: string) {
     }
     return fs.readFileSync(filePath, 'utf-8')
 }
+
+export function genSvg(id: string, size = 18) {
+    return `<svg width="${size}" height="${size}"><use xlink:href="#${id}"></use></svg>`
+}

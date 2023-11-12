@@ -49,7 +49,7 @@ async function test() {
     const app = createSSRApp({
         // template: m[1],
         template: tmp,
-        data: () => ({message: 'testing', abc: false})
+        data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'})
     })
     const p = await renderToString(app, { comment: false })
     console.log(p)
@@ -65,4 +65,4 @@ function testFs() {
     console.log(res)
 }
 
-testFs()
+test()
