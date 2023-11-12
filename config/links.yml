@@ -32,9 +32,10 @@ viewerjs:
 
 fancybox:
   css:
-    - //lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css
+    - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css
   js:
-    - //lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js
+    - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js
+    - post/play-imgs.js
 
 # 流程图
 mermaid:
