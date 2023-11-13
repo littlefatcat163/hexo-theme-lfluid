@@ -22,7 +22,15 @@ clipboard:
     - //lib.baomitu.com/clipboard.js/latest/clipboard.min.js
     - post/copying-code.js
 
-# 图片放大
+# https://photoswipe.com/
+photoswipe:
+  css:
+    - //lib.baomitu.com/photoswipe/5.4.2/photoswipe.min.css
+  js:
+    - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe.umd.min.js
+    - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js
+    - post/img-swipe.js
+
 viewerjs:
   css:
     - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.css
