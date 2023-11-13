@@ -1,5 +1,5 @@
 ;(() => {
-    const imgs = document.querySelectorAll('.markdown-body :not(a) > img')
+    const imgs = document.querySelectorAll('.markdown-body img')
     const promiseds = Array.prototype.map.call(imgs, (item) => {
         return new Promise((resolve, reject) => {
             const src = item.getAttribute('src')
