@@ -1,3 +1,3 @@
 import './index-generator'
-import './local-search'
+// import './local-search'
 import './pages'

@@ -1,11 +1,3 @@
-/* global LNote */
-
-/* HTMLElement.prototype.wrap = function(wrapper) {
-  this.parentNode.insertBefore(wrapper, this);
-  this.parentNode.removeChild(this);
-  wrapper.appendChild(this);
-}; */
-
 LNote.events = {
     registerNavbarEvent: function () {
         var navbar = jQuery('#navbar')

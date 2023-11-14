@@ -1,14 +1,18 @@
 css: 
-  - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css
   - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css
   - main.css
 js:
-  - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js
   - //lib.baomitu.com/typed.js/2.0.12/typed.min.js
-  - //cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js
+  # - //cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js
   - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js
   - local-search.js
   - events.js
+
+nprogress:
+  css:
+    - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css
+  js:
+    - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js
 
 # 文章标题生成目录导航栏
 tocbot:

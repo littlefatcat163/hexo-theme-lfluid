@@ -4,15 +4,15 @@
     <div class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold"><%= __('search.title') %></h4>
-        <button type="button" id="local-search-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input"><%= __('search.keyword') %></label>
+          <input type="text" id="modalSearchInput" class="form-control validate">
+          <label data-error="x" data-success="v" for="modalSearchInput"><%= __('search.keyword') %></label>
         </div>
-        <div class="list-group" id="local-search-result"></div>
+        <div class="list-group" id="modalSearchResult"></div>
       </div>
     </div>
   </div>

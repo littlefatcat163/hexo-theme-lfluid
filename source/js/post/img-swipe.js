@@ -27,14 +27,14 @@
             wheelToZoom: true,
         })
         lightbox.init()
-        lightbox.on('initialLayout', () => {
+        /* lightbox.on('initialLayout', () => {
             $('.pswp').on('contextmenu.fb', function (e) {
                 if (e.button == 2) {
                     e.preventDefault()
                 }
                 return true
             })
-        })
+        }) */
         /* lightbox.on('destroy', () => {
       console.log('destroy');
     }); */
