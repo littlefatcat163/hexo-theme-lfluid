@@ -36,11 +36,22 @@ function linkScript(url: string) {
     return `<script src="${url}"></script>`
 }
 
-const htmlLink = (items: any[], type: HtmlLinkType) => {
+function linkScriptESM(url: string) {
+    return `<script type="module" src="${url}"></script>`
+}
+
+const htmlLink = (items: any[], type: HtmlLinkType, esm: boolean = false) => {
     if (type === 'css') {
         return items
             .map((item) => {
                 return linkStyle(linkUrl(item, type))
+            })
+            .join('')
+    }
+    if (esm) {
+        return items
+            .map((item) => {
+                return linkScriptESM(linkUrl(item, type))
             })
             .join('')
     }
@@ -67,7 +78,7 @@ const postHtmlLink = (key: string) => {
         res.push(htmlLink(source.css, 'css'))
     }
     if (source.js) {
-        res.push(htmlLink(source.js, 'js'))
+        res.push(htmlLink(source.js, 'js', source.esm))
     }
     return res.join('')
 }

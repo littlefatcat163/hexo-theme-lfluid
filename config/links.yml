@@ -27,11 +27,12 @@ clipboard:
 
 # https://photoswipe.com/
 photoswipe:
+  esm: true
   css:
     - //lib.baomitu.com/photoswipe/5.4.2/photoswipe.min.css
   js:
-    - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe.umd.min.js
-    - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js
+    # - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe.umd.min.js
+    # - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js
     - post/img-swipe.js
 
 viewerjs:

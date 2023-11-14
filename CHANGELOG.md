@@ -9,6 +9,7 @@
 - toc 移除jquery依赖
 - coding 移除jquery依赖
 - 回到顶部按钮永远出现，没必要作无谓的显示隐藏动作
+- photoswipe启用esm
 
 
 - [ ] vite esm html使用的js，内嵌入文章之中
