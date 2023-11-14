@@ -1,3 +1,18 @@
+## 1.2.2
+
+### Changed
+- nprogress 转移入header
+- local search replace to json
+- 移除jquery的依赖
+- event 移除jquery依赖
+- img-swipe 移除jquery依赖
+- toc 移除jquery依赖
+- coding 移除jquery依赖
+- 回到顶部按钮永远出现，没必要作无谓的显示隐藏动作
+
+
+- [ ] vite esm html使用的js，内嵌入文章之中
+
 ## 1.0.8
 ### Added
 - n 名词

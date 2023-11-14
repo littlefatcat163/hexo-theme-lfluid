@@ -7,12 +7,14 @@
         return `<svg width="1em" height="1em"><use xlink:href="#${id}"/></svg>`
     }
 
-    $('.markdown-body .highlight').each(function () {
-        $(this).prepend(
-            `<button type="button" class="btn-clipboard" title="Copy to clipboard">${genSVG(
-                'clipboard'
-            )}</button>`
-        )
+    const codes = document.querySelectorAll('.markdown-body .highlight')
+    codes.forEach((item) => {
+        const btn = document.createElement('button')
+        btn.type = 'button'
+        btn.classList.add('btn-clipboard')
+        btn.title = 'Copy to clipboard'
+        btn.innerHTML = genSVG('clipboard')
+        item.insertAdjacentElement('afterbegin', btn)
     })
 
     const clipboard = new ClipboardJS('.btn-clipboard', {

@@ -1,124 +1,37 @@
 LNote.events = {
-    registerNavbarEvent: function () {
-        var navbar = jQuery('#navbar')
-        if (navbar.length === 0) {
+    registerNavbarEvent() {
+        const $navbar = document.getElementById('navbar')
+        if (!$navbar) {
             return
         }
-        var submenu = jQuery('#navbar .dropdown-menu')
-        if (navbar.offset().top > 0) {
-            navbar.removeClass('navbar-dark')
-            submenu.removeClass('navbar-dark')
-        }
-        LNote.utils.listenScroll(function () {
-            navbar[navbar.offset().top > 50 ? 'addClass' : 'removeClass'](
-                'top-nav-collapse'
-            )
-            submenu[navbar.offset().top > 50 ? 'addClass' : 'removeClass'](
-                'dropdown-collapse'
-            )
-            if (navbar.offset().top > 0) {
-                navbar.removeClass('navbar-dark')
-                submenu.removeClass('navbar-dark')
+
+        function $navUd() {
+            const top = window.scrollY || document.documentElement.scrollTop
+            if (top > 0) {
+                $navbar.classList.remove('navbar-dark')
+                if (top > 50) {
+                    $navbar.classList.add('top-nav-collapse')
+                } else {
+                    $navbar.classList.remove('top-nav-collapse')
+                }
             } else {
-                navbar.addClass('navbar-dark')
-                submenu.removeClass('navbar-dark')
-            }
-        })
-        jQuery('#navbar-toggler-btn').on('click', function () {
-            jQuery('.animated-icon').toggleClass('open')
-            jQuery('#navbar').toggleClass('navbar-col-show')
-        })
-    },
-
-    registerParallaxEvent: function () {
-        var ph = jQuery('#banner[parallax="true"]')
-        if (ph.length === 0) {
-            return
-        }
-        var board = jQuery('#board')
-        if (board.length === 0) {
-            return
-        }
-        var parallax = function () {
-            var pxv = jQuery(window).scrollTop() / 5
-            var offset = parseInt(board.css('margin-top'), 10)
-            var max = 96 + offset
-            if (pxv > max) {
-                pxv = max
-            }
-            ph.css({
-                transform: 'translate3d(0,' + pxv + 'px,0)',
-            })
-            var sideCol = jQuery('.side-col')
-            if (sideCol) {
-                sideCol.css({
-                    'padding-top': pxv + 'px',
-                })
+                $navbar.classList.add('navbar-dark')
             }
         }
-        LNote.utils.listenScroll(parallax)
+        $navUd()
+        LNote.utils.listenScroll($navUd)
+
+        document
+            .getElementById('navbar-toggler-btn')
+            .addEventListener('click', (e) => {
+                document
+                    .querySelector('.animated-icon')
+                    .classList.toggle('open')
+                $navbar.classList.toggle('navbar-col-show')
+            })
     },
 
-    registerScrollDownArrowEvent: function () {
-        var scrollbar = jQuery('.scroll-down-bar')
-        if (scrollbar.length === 0) {
-            return
-        }
-        scrollbar.on('click', function () {
-            LNote.utils.scrollToElement('#board', -jQuery('#navbar').height())
-        })
-    },
-
-    registerScrollTopArrowEvent: function () {
-        var topArrow = jQuery('#scroll-top-button')
-        if (topArrow.length === 0) {
-            return
-        }
-        var board = jQuery('#board')
-        if (board.length === 0) {
-            return
-        }
-        var posDisplay = false
-        var scrollDisplay = false
-        // Position
-        var setTopArrowPos = function () {
-            var boardRight = board[0].getClientRects()[0].right
-            var bodyWidth = document.body.offsetWidth
-            /* var right = bodyWidth - boardRight;
-      posDisplay = right >= 50;
-      topArrow.css({
-        'bottom': posDisplay && scrollDisplay ? '20px' : '-60px',
-        'right' : right - 64 + 'px'
-      }); */
-            var right = Math.max(bodyWidth - boardRight - 64, 16)
-            posDisplay = true
-            topArrow.css({
-                bottom: posDisplay && scrollDisplay ? '20px' : '-60px',
-                right: right + 'px',
-            })
-        }
-        setTopArrowPos()
-        jQuery(window).resize(setTopArrowPos)
-        // Display
-        var headerHeight = board.offset().top
-        LNote.utils.listenScroll(function () {
-            var scrollHeight =
-                document.body.scrollTop + document.documentElement.scrollTop
-            scrollDisplay = scrollHeight >= headerHeight
-            topArrow.css({
-                bottom: posDisplay && scrollDisplay ? '20px' : '-60px',
-            })
-        })
-        // Click
-        topArrow.on('click', function () {
-            jQuery('body,html').animate({
-                scrollTop: 0,
-                easing: 'swing',
-            })
-        })
-    },
-
-    registerImageLoadedEvent: function () {
+    /* registerImageLoadedEvent: function () {
         if (!('NProgress' in window)) {
             return
         }
@@ -150,13 +63,10 @@ LNote.events = {
                 img.onload()
             }
         }
-    },
+    }, */
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     LNote.events.registerNavbarEvent()
-    LNote.events.registerParallaxEvent()
-    LNote.events.registerScrollDownArrowEvent()
-    LNote.events.registerScrollTopArrowEvent()
-    LNote.events.registerImageLoadedEvent()
+    // LNote.events.registerImageLoadedEvent()
 })

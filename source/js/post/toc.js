@@ -1,10 +1,7 @@
 (() => {
-    const toc = $('#toc')
-    if (toc.length === 0 || !window.tocbot) {
+    if (!window.tocbot) {
         return
     }
-    const boardCtn = $('#board-ctn')
-    const boardTop = boardCtn.offset().top
 
     window.tocbot.init({
         tocSelector: '#toc-body',
@@ -16,12 +13,12 @@
         collapsibleClass: 'tocbot-is-collapsible',
         scrollSmooth: true,
         includeTitleTags: true,
-        headingsOffset: -boardTop,
+        // headingsOffset: -boardTop,
         headingSelector: 'h1,h2,h3,h4',
         placement: 'right',
         collapseDepth: 0
     })
-    if (toc.find('.toc-list-item').length > 0) {
-        toc.css('visibility', 'visible')
-    }
+
+    const toc = document.getElementById('toc')
+    toc.style.visibility = 'visible'
 })()

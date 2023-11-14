@@ -5,11 +5,16 @@
             const src = item.getAttribute('src')
             const __img = new Image()
             __img.onload = function () {
-                $(item)
-                    .wrap(
-                        `<a href="${src}" target="_blank" data-pswp-src="${src}" data-pswp-width="${__img.width}" data-pswp-height="${__img.height}"></a>`
-                    )
-                    .parent('a')
+                const a = document.createElement('a')
+                a.href = src
+                a.target = '_blank'
+                a.setAttribute('data-pswp-src', src)
+                a.setAttribute('data-pswp-width', __img.width)
+                a.setAttribute('data-pswp-height', __img.height)
+                const parentNode = item.parentNode
+                parentNode.removeChild(item)
+                a.appendChild(item)
+                parentNode.appendChild(a)
                 resolve()
             }
             __img.onerror = function () {
