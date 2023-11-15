@@ -1,6 +1,6 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpack = require('webpack')
+const WebpackObfuscator = require('webpack-obfuscator')
 
 module.exports = {
     target: 'node',
@@ -42,6 +42,11 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new WebpackObfuscator ({
+            trasnformObjectKeys: true,
+            rotateStringArray: true,
+            roatetStringArrayEnable: true
+        }, ['excluded_bundle_name.js'])
         /* new webpack.DefinePlugin({
             'import.meta.resolve': 'require.resolve'
         }), */
