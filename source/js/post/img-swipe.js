@@ -1,4 +1,4 @@
-import PhotoSwipeLightbox from 'https://lib.baomitu.com/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+import PhotoSwipeLightbox from '//lib.baomitu.com/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
 
 const imgs = document.querySelectorAll('.markdown-body img')
 const promiseds = Array.prototype.map.call(imgs, (item) => {

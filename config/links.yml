@@ -59,5 +59,6 @@ mermaid:
 
 # 开启功能，如 bootstrap popver
 enable:
+  esm: true
   js:
     - post/enable.js

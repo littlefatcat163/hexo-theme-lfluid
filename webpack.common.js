@@ -5,15 +5,15 @@ const WebpackObfuscator = require('webpack-obfuscator')
 module.exports = {
     target: 'node',
     entry: {
-        'index': './src/index.ts'
+        index: './src/index.ts',
     },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'scripts'),
         clean: true,
         library: {
-            type: 'commonjs'
-        }
+            type: 'commonjs',
+        },
     },
     externals: {
         lodash: 'lodash',
@@ -26,7 +26,7 @@ module.exports = {
         vue: 'vue',
         '@vue/server-renderer': '@vue/server-renderer',
         'lnote-esm': 'lnote-esm',
-        nunjucks: 'nunjucks'
+        nunjucks: 'nunjucks',
     },
     module: {
         rules: [
@@ -35,18 +35,21 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'ts-loader',
             },
-        ]
+        ],
     },
     resolve: {
         extensions: ['.ts', '.js'],
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new WebpackObfuscator ({
-            trasnformObjectKeys: true,
-            rotateStringArray: true,
-            roatetStringArrayEnable: true
-        }, ['excluded_bundle_name.js'])
+        new WebpackObfuscator(
+            {
+                trasnformObjectKeys: true,
+                rotateStringArray: true,
+                roatetStringArrayEnable: true,
+            },
+            ['excluded_bundle_name.js']
+        ),
         /* new webpack.DefinePlugin({
             'import.meta.resolve': 'require.resolve'
         }), */
@@ -55,5 +58,5 @@ module.exports = {
             exclude: /node_modules/
         }) */
         // new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })
-    ]
+    ],
 }
