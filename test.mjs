@@ -60,9 +60,9 @@ async function test() {
 // test()
 
 function testFs() {
-    const res = fs.existsSync('global.d.ts')
+    const res = fs.readdirSync('asd')
     // fs.statSync('test.vue')
     console.log(res)
 }
 
-test()
+testFs()

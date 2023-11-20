@@ -1,6 +1,12 @@
 import yaml from 'yaml'
 import fs from 'fs'
 import path from 'path'
+import {
+    linkScriptESM,
+    linkUrl,
+    linkStyle,
+    linkScript,
+} from '../utils/htmlLink'
 
 const theme_dir = hexo.theme_dir
 const root = hexo.config.root
@@ -18,46 +24,24 @@ function readLinks() {
 
 type HtmlLinkType = 'js' | 'css'
 
-function linkUrl(url: string, type: HtmlLinkType) {
-    if (/^https*:\/\//.test(url) || /^\/\//.test(url)) {
-        return url
-    }
-    if (url.startsWith(root)) {
-        return url
-    }
-    return `${root}${type}/${url}`
-}
-
-function linkStyle(url: string) {
-    return `<link rel="stylesheet" href="${url}" />`
-}
-
-function linkScript(url: string) {
-    return `<script src="${url}"></script>`
-}
-
-function linkScriptESM(url: string) {
-    return `<script type="module" src="${url}"></script>`
-}
-
 const htmlLink = (items: any[], type: HtmlLinkType, esm: boolean = false) => {
     if (type === 'css') {
         return items
             .map((item) => {
-                return linkStyle(linkUrl(item, type))
+                return linkStyle(linkUrl(root, item, type))
             })
             .join('')
     }
     if (esm) {
         return items
             .map((item) => {
-                return linkScriptESM(linkUrl(item, type))
+                return linkScriptESM(linkUrl(root, item, type))
             })
             .join('')
     }
     return items
         .map((item) => {
-            return linkScript(linkUrl(item, type))
+            return linkScript(linkUrl(root, item, type))
         })
         .join('')
 }
