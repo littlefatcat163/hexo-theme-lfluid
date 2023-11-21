@@ -13,9 +13,9 @@ const promiseds = Array.prototype.map.call(imgs, (item) => {
             a.setAttribute('data-pswp-width', __img.width)
             a.setAttribute('data-pswp-height', __img.height)
             const parentNode = item.parentNode
+            parentNode.insertBefore(a, item)
             parentNode.removeChild(item)
             a.appendChild(item)
-            parentNode.appendChild(a)
             resolve()
         }
         __img.onerror = function () {

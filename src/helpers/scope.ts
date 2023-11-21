@@ -27,6 +27,7 @@ const pageInScope = (page: any, scope: string) => {
     }
 }
 
+// @ts-ignore
 hexo.extend.helper.register('in_scope', function (scope) {
     if (!scope || scope.length === 0) {
         return true

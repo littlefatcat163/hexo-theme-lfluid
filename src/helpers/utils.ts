@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+// @ts-ignore
 import { decodeURL } from 'hexo-util'
 
 hexo.extend.helper.register('md5', function (string) {

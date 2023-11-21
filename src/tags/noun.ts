@@ -24,4 +24,5 @@ const noun = (args: string[]) => {
 }
 
 // {% n key %}
+// @ts-ignore
 hexo.extend.tag.register('noun', noun, { ends: false, async: true })

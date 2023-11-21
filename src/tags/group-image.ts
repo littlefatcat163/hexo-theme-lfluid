@@ -1,6 +1,6 @@
 import { igRowCol } from '../utils/hexoTagArgs'
 
-const groupImage = (args: string[], content?: string) => {
+const groupImage = (args: string[], content: string) => {
     const imgsSameSize = args[0] === 'same'
 
     content = hexo.render.renderSync({ text: content, engine: 'markdown' })

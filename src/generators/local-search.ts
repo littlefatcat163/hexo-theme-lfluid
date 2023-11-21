@@ -2,7 +2,7 @@ import nunjucks from 'nunjucks'
 import pathFn from 'path'
 import fs from 'fs'
 
-hexo.extend.generator.register('_hexo_generator_search', function (locals) {
+hexo.extend.generator.register('_hexo_generator_search', function (locals: any) {
     // @ts-ignore
     const config = this.theme.config
 

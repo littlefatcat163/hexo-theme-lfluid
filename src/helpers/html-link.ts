@@ -55,7 +55,7 @@ const allHtmlLink = (type: HtmlLinkType) => {
 const postHtmlLink = (key: string) => {
     const source = readLinks()[key]
     if (!source) {
-        return
+        return ''
     }
     const res = []
     if (source.css) {

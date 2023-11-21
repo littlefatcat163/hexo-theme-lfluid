@@ -20,11 +20,11 @@ const symbolsCount = (count: number) => {
 }
 
 hexo.extend.helper.register('min2read', (post, { awl, wpm }) => {
-    return Math.floor(getWordCount(post) / ((awl || 2) * (wpm || 60))) + 1
+    return `${Math.floor(getWordCount(post) / ((awl || 2) * (wpm || 60))) + 1}`
 })
 
 hexo.extend.helper.register('wordcount', (post) => {
-    return symbolsCount(getWordCount(post))
+    return `${symbolsCount(getWordCount(post))}`
 })
 
 hexo.extend.helper.register('wordtotal', (site) => {
@@ -32,5 +32,5 @@ hexo.extend.helper.register('wordtotal', (site) => {
     site.posts.forEach((post: any) => {
         count += getWordCount(post)
     })
-    return symbolsCount(count)
+    return `${symbolsCount(count)}`
 })

@@ -1,6 +1,7 @@
+// @ts-ignore
 import pagination from 'hexo-pagination'
 
-hexo.extend.generator.register('index', function (locals) {
+hexo.extend.generator.register('index', function (locals: any) {
     const config = hexo.config
     const posts = locals.index_posts.sort(
         config.index_generator.order_by

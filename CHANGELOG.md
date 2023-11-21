@@ -8,6 +8,11 @@
 ### Changed
 
 - html link 生成js和css部分转移到utils
+- 移除自定义hexo type d.ts
+
+### Fixed
+
+- img-swipe 插入图片a标签不改变标签位置
 
 ## 1.2.3
 

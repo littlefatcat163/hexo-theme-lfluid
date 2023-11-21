@@ -1,6 +1,7 @@
 import moment from 'moment'
 const { isMoment } = moment
 
+// @ts-ignore
 hexo.extend.helper.register('compare_date', function (date1, date2) {
     if (!date1) {
         return -1

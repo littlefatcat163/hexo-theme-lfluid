@@ -3,7 +3,7 @@ import path from 'path'
 
 // generate 404 page
 if (!fs.existsSync(path.join(hexo.source_dir, '404.html'))) {
-    hexo.extend.generator.register('_404', function (locals) {
+    hexo.extend.generator.register('_404', function (locals: any) {
         return {
             path: '404.html',
             data: locals.theme,
@@ -13,7 +13,7 @@ if (!fs.existsSync(path.join(hexo.source_dir, '404.html'))) {
 }
 
 // generate tags Page
-hexo.extend.generator.register('_tags', function (locals) {
+hexo.extend.generator.register('_tags', function (locals: any) {
     return {
         path: 'tags/index.html',
         data: locals.theme,
@@ -22,7 +22,7 @@ hexo.extend.generator.register('_tags', function (locals) {
 })
 
 // generate categories Page
-hexo.extend.generator.register('_categories', function (locals) {
+hexo.extend.generator.register('_categories', function (locals: any) {
     return {
         path: 'categories/index.html',
         data: locals.theme,
@@ -31,7 +31,7 @@ hexo.extend.generator.register('_categories', function (locals) {
 })
 
 // generate links page
-hexo.extend.generator.register('_links', function (locals) {
+hexo.extend.generator.register('_links', function (locals: any) {
     return {
         path: 'links/index.html',
         data: locals.theme,
