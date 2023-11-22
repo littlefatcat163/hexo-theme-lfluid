@@ -9,6 +9,7 @@
 
 - html link 生成js和css部分转移到utils
 - 移除自定义hexo type d.ts
+- 关闭网页访问次数功能
 
 ### Fixed
 
