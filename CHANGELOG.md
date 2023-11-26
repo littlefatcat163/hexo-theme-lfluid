@@ -4,12 +4,14 @@
 
 - 读取 hexo basedir / src 目录下的配置，分别写入到项目中
 - 启用 CSR 客户端渲染文章，开启后将去同步扫描文章对应的js目录，并读取目录下面的yml配置信息，读取到了，载入js和css，没有配置文件，则直接载入对应目录的js，默认都是esm，其他cdn的都当作是umd
+- index.d.ts LNote for browser
 
 ### Changed
 
 - html link 生成js和css部分转移到utils
 - 移除自定义hexo type d.ts
 - 关闭网页访问次数功能
+- ~~模板数据解析支持扫描目录下的所有数据，暂不支持，每份数据规则不同，需要考虑自行处理~~
 
 ### Fixed
 

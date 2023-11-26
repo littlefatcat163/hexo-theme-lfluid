@@ -3,6 +3,7 @@
   "version": "1.2.5",
   "description": "An elegant Material-Design theme for Hexo.",
   "main": "package.json",
+  "types": "index.d.ts",
   "files": [
     "languages",
     "layout",
@@ -10,7 +11,8 @@
     "config",
     "source",
     "_config.yml",
-    "templates"
+    "templates",
+    "index.d.ts"
   ],
   "scripts": {
     "test": "jest --coverage --silent --watchAll=false",
