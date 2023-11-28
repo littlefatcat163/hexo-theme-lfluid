@@ -1,13 +1,10 @@
 <template>
-    <button v-if="title == null" type="button" class="btn btn-link lnote-popover-btn" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="right"
-        data-bs-custom-class="lnote-popover" :data-bs-content="desc">
+    <button type="button" class="btn btn-link lnote-popover-btn" data-bs-toggle="popover" data-bs-trigger="hover focus"
+        data-bs-placement="right" data-bs-custom-class="lnote-popover" :data-bs-title="title" :data-bs-content="desc">
         {{ text }}
-        <svg width="18" height="18"><use xlink:href="#question-circle-fill"></use></svg>
-    </button>
-    <button v-else type="button" class="btn btn-link lnote-popover-btn" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="right"
-        data-bs-custom-class="lnote-popover" :data-bs-title="title" :data-bs-content="desc">
-        {{ text }}
-        <svg width="18" height="18"><use xlink:href="#question-circle-fill"></use></svg>
+        <svg width="18" height="18">
+            <use xlink:href="#question-circle-fill"></use>
+        </svg>
     </button>
 </template>
 
