@@ -10,8 +10,8 @@ const promiseds = Array.prototype.map.call(imgs, (item) => {
             a.href = src
             a.target = '_blank'
             a.setAttribute('data-pswp-src', src)
-            a.setAttribute('data-pswp-width', __img.width)
-            a.setAttribute('data-pswp-height', __img.height)
+            a.setAttribute('data-pswp-width', __img.naturalWidth)
+            a.setAttribute('data-pswp-height', __img.naturalHeight)
             const parentNode = item.parentNode
             parentNode.insertBefore(a, item)
             parentNode.removeChild(item)
