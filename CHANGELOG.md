@@ -15,6 +15,7 @@
 - 调整 nonu 模板，vue3已经支持适配html attr，如果绑定的值不存在，则不会拥有该 attr
 - 优化css，移除没用到的资源
 - js img-swipe use native size
+- noscript i18n
 - ~~模板数据解析支持扫描目录下的所有数据，暂不支持，每份数据规则不同，需要考虑自行处理~~
 
 ### Fixed
