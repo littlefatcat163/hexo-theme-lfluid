@@ -16,11 +16,13 @@
 - 优化css，移除没用到的资源
 - js img-swipe use native size
 - noscript i18n
+- enable hide post
 - ~~模板数据解析支持扫描目录下的所有数据，暂不支持，每份数据规则不同，需要考虑自行处理~~
 
 ### Fixed
 
 - img-swipe 插入图片a标签不改变标签位置
+- remove h1, because post has been title, and replace it to fs-1
 
 ## 1.2.3
 

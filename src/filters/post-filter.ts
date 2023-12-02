@@ -31,16 +31,18 @@ hexo.extend.filter.register('before_generate', function() {
   _this.locals.set('index_posts', indexPost);
 });
 
-// const original_post_generator = hexo.extend.generator.get('post');
+const original_post_generator = hexo.extend.generator.get('post');
 
-/* hexo.extend.generator.register('post', function(locals) {
+hexo.extend.generator.register('post', function(locals: any) {
   // 发送时需要把过滤的页面也加入
-  return original_post_generator.bind(this)({
+  // @ts-ignore
+  const _this = this
+  return original_post_generator.bind(_this)({
     posts: new locals.posts.constructor(
       locals.posts.data.concat(locals.hide_posts.data)
     )
   });
-}); */
+});
 
 // 渲染文章后的过滤
 /* hexo.extend.filter.register('after_post_render', (page) => {
