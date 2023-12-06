@@ -1,4 +1,5 @@
 import { igRowCol } from '../utils/hexoTagArgs'
+import { imgElGlobalClass } from '../utils/htmlEl'
 
 const groupImage = (args: string[], content: string) => {
     const imgsSameSize = args[0] === 'same'
@@ -8,15 +9,17 @@ const groupImage = (args: string[], content: string) => {
     let images: string[] = content.match(/<img[\s\S]*?>/g)!
     const rowCol = igRowCol(images.length)
     if (rowCol === 1) {
-        return images[0]
+        return imgElGlobalClass(images[0])
     }
     if (imgsSameSize) {
         images = images.map((item) => {
-            return `<div class="col">${item}</div>`
+            return `<div class="col">${imgElGlobalClass(item)}</div>`
         })
     } else {
         images = images.map((item) => {
-            return `<div class="col"><div class="image-adapter"><div>${item}</div></div></div>`
+            return `<div class="col"><div class="image-adapter"><div>${imgElGlobalClass(
+                item
+            )}</div></div></div>`
         })
     }
 

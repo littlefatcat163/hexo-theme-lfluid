@@ -6,6 +6,7 @@
 - 启用 CSR 客户端渲染文章，开启后将去同步扫描文章对应的js目录，并读取目录下面的yml配置信息，读取到了，载入js和css，没有配置文件，则直接载入对应目录的js，默认都是esm，其他cdn的都当作是umd
 - index.d.ts LNote for browser
 - lnote-lightbox-caption 支持 img alt
+- 处理图片，添加全局class
 
 ### Changed
 

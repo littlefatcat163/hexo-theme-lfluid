@@ -23,7 +23,7 @@ module.exports = {
         css: 'css',
         nunjucks: 'nunjucks',
         systeminformation: 'systeminformation',
-        vue: 'vue',
+        // vue: 'vue',
         '@vue/server-renderer': '@vue/server-renderer',
         'lnote-esm': 'lnote-esm',
         nunjucks: 'nunjucks',

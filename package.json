@@ -17,7 +17,7 @@
   "scripts": {
     "test": "jest --coverage --silent --watchAll=false",
     "unit": "jest --watchAll",
-    "unit-spec": "jest --watchAll --verbose ./src/utils/__test__/assetsFile.test.ts",
+    "unit-spec": "jest --watchAll --verbose ./src/utils/__test__/htmlEl.test.ts",
     "dev": "npx webpack --watch --config webpack.dev.js",
     "build": "npx webpack --config webpack.config.js"
   },
