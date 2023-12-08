@@ -7,6 +7,7 @@
 - index.d.ts LNote for browser
 - lnote-lightbox-caption 支持 img alt
 - 处理图片，添加全局class
+- img-swipe新增title，支持图片分组，img-swipe-single 和 img-swipe-group，注意： markdown 图片如果需要swipe效果，必须适用 {% gi %} 图片组，不管是一张还是多张，都将被认为一组图片
 
 ### Changed
 
@@ -22,7 +23,7 @@
 
 ### Fixed
 
-- img-swipe 插入图片a标签不改变标签位置
+- ~~img-swipe 插入图片a标签不改变标签位置~~
 - remove h1, because post has been title, and replace it to fs-1
 
 ## 1.2.3

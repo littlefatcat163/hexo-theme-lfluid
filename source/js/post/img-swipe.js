@@ -1,35 +1,82 @@
-import PhotoSwipeLightbox from '//lib.baomitu.com/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+import PhotoSwipeLightbox from '//lib.baomitu.com/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js'
 
-const imgs = document.querySelectorAll('.markdown-body img')
-const promiseds = Array.prototype.map.call(imgs, (item) => {
+const lightbox = new PhotoSwipeLightbox({
+    pswpModule: () => import('//lib.baomitu.com/photoswipe/5.4.2/photoswipe.esm.min.js'),
+    wheelToZoom: true,
+})
+const groups = []
+
+const imgClick = (event) => {
+    const dataSwipeI = Number.parseInt(event.target.getAttribute('data-swipe-i'))
+    const dataSwipeGi = event.target.getAttribute('data-swipe-gi')
+    lightbox.loadAndOpen(dataSwipeI, groups[dataSwipeGi])
+}
+
+function imgToData($img, groupIndex, index) {
     return new Promise((resolve, reject) => {
-        const src = item.getAttribute('src')
-        const __img = new Image()
-        __img.onload = function () {
-            const a = document.createElement('a')
-            a.href = src
-            a.target = '_blank'
-            a.setAttribute('data-pswp-src', src)
-            a.setAttribute('data-pswp-width', __img.naturalWidth)
-            a.setAttribute('data-pswp-height', __img.naturalHeight)
-            const parentNode = item.parentNode
-            parentNode.insertBefore(a, item)
-            parentNode.removeChild(item)
-            a.appendChild(item)
+        $img.setAttribute('data-swipe-gi', groupIndex)
+        $img.setAttribute('data-swipe-i', index)
+        const src = $img.getAttribute('src')
+        const alt = $img.getAttribute('alt')
+        const data = { src, alt }
+        const loadDone = () => {
+            groups[groupIndex][index] = {
+                ...data,
+                width: $img.naturalWidth,
+                height: $img.naturalHeight,
+            }
             resolve()
+            $img.onclick = imgClick
         }
-        __img.onerror = function () {
+        if ($img.complete) {
+            loadDone()
+        } else {
+            $img.onload = loadDone
+        }
+
+        $img.onerror = () => {
             reject()
         }
-        __img.src = src
+    })
+}
+
+const promiseds = []
+
+document.querySelectorAll('.img-swipe-single').forEach($img => {
+    const groupIndex = groups.length
+    groups.push([{}])
+    promiseds.push(imgToData($img, groupIndex, 0))
+})
+
+document.querySelectorAll('.img-swipe-group').forEach($group => {
+    const groupIndex = groups.length
+    groups.push([])
+    $group.querySelectorAll('img').forEach(($img, index) => {
+        groups[groupIndex].push({})
+        promiseds.push(imgToData($img, groupIndex, index))
     })
 })
+
+if (promiseds.length === 0) {
+    throw new Error('empty img')
+}
+
 Promise.allSettled(promiseds).then(() => {
-    const lightbox = new PhotoSwipeLightbox({
-        gallery: '#board',
-        children: 'a[data-pswp-src]',
-        pswpModule: () => import('//lib.baomitu.com/photoswipe/5.4.2/photoswipe.esm.min.js'),
-        wheelToZoom: true,
+    console.log(groups)
+    lightbox.on('uiRegister', () => {
+        lightbox.pswp.ui.registerElement({
+            name: 'custom-caption',
+            className: 'lnote-lightbox-caption',
+            order: 9,
+            isButton: false,
+            appendTo: 'root',
+            html: 'Caption text',
+            onInit(el, pswp) {
+                pswp.on('change', () => {
+                    el.innerHTML = `<div>${pswp.currSlide.data.alt}</div>`
+                })
+            },
+        })
     })
     lightbox.init()
 })
