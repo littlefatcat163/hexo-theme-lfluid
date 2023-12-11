@@ -62,7 +62,6 @@ if (promiseds.length === 0) {
 }
 
 Promise.allSettled(promiseds).then(() => {
-    console.log(groups)
     lightbox.on('uiRegister', () => {
         lightbox.pswp.ui.registerElement({
             name: 'custom-caption',
