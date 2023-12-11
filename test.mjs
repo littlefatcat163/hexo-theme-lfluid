@@ -50,11 +50,16 @@ async function test() {
     /* const a = await import('./test.vue')
     console.log(a) */
     const m = tmp.match(/<template>([\s\S]*?)<\/template>/)
-    /* const app = createSSRApp({
-        // template: m[1],
-        template: tmp,
-        data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'})
-    }) */
+    const app = createSSRApp({
+        template: m[1],
+        // template: tmp,
+        data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'}),
+        methods: {
+            toImgUrl(uri) {
+                return `xxx/${uri}`
+            }
+        }
+    })
     const tsr = parse(tmp)
     // console.log(compileScript(tsr.descriptor, {id: ''}))
     const tms = compileTemplate({
@@ -64,12 +69,12 @@ async function test() {
     })
     // console.log(tms)
     // return
-    const app = createSSRApp({
+    /* const app = createSSRApp({
         // template: m[1],
         template: tsr.descriptor.template.content,
         data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'}),
         // components: []
-    })
+    }) */
     const p = await renderToString(app, {data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'})})
     console.log(p)
     /* const s = await ssrRenderComponent(tmp)

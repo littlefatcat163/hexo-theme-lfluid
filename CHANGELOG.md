@@ -8,6 +8,7 @@
 - lnote-lightbox-caption 支持 img alt
 - 处理图片，添加全局class
 - img-swipe新增title，支持图片分组，img-swipe-single 和 img-swipe-group，注意： markdown 图片如果需要swipe效果，必须适用 {% gi %} 图片组，不管是一张还是多张，都将被认为一组图片
+- vue 模板添加公用获取链接方法
 
 ### Changed
 

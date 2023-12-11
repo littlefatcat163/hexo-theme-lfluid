@@ -3,6 +3,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['<rootDir>/src/'],
+  testRegex: '(/tests/.*|(\.|/)(test|spec))\.ts',
   collectCoverageFrom: [
     '**/*.ts',
     '!**/node_modules/**',

@@ -2,11 +2,16 @@ import fs from 'fs'
 import { createSSRApp } from 'vue'
 import { renderToString } from '@vue/server-renderer'
 
-export function vueToHtml(tmpStr: string, data: any): Promise<string> {
+export function vueToHtml(
+    tmpStr: string,
+    data: any,
+    methods?: any
+): Promise<string> {
     const m = tmpStr.match(/<template>([\s\S]*?)<\/template>/)
     const app = createSSRApp({
         template: m![1],
         data: () => data,
+        methods,
     })
     return renderToString(app)
 }

@@ -4,6 +4,7 @@
         {{ message }}
         <span v-html="hh"></span>
         <!-- <Test1></Test1> -->
+        <a :href="toImgUrl('123')">xxx</a>
     </div>
 </template>
 
@@ -13,6 +14,10 @@ const message = 123
 const abc = true
 const arr = []
 const hh = ''
+
+const toImgUrl = (uri: string) => {
+    return `xxx/${uri}`
+}
 </script>
 
 
