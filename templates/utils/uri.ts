@@ -6,7 +6,7 @@ function runtimeProjectInfo() {
     return JSON.parse(fs.readFileSync(projectPath, 'utf-8'))
 }
 
-export function uriFor(resUri: string) {
+export function uriFor(uris: string[]) {
     const { name } = runtimeProjectInfo()
-    return ['', name, resUri.replace(/^\//, '')].join('/')
+    return ['', name, ...uris].join('/')
 }

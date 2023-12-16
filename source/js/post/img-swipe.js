@@ -69,9 +69,12 @@ Promise.allSettled(promiseds).then(() => {
             order: 9,
             isButton: false,
             appendTo: 'root',
-            html: 'Caption text',
+            html: null,
             onInit(el, pswp) {
                 pswp.on('change', () => {
+                    if (pswp.currSlide.data.alt == null) {
+                        return
+                    }
                     el.innerHTML = `<div>${pswp.currSlide.data.alt}</div>`
                 })
             },
