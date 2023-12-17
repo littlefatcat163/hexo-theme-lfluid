@@ -23,7 +23,7 @@ const groupImage = (args: string[], content: string) => {
         })
     }
 
-    return `<div class="container group-image-container img-swipe-group"><div class="row row-cols-${rowCol} gx-2 gy-2">${images.join(
+    return `<div class="group-image-container img-swipe-group"><div class="row row-cols-${rowCol} gx-2 gy-2">${images.join(
         ''
     )}</div></div>`
 }

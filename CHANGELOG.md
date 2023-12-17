@@ -1,14 +1,17 @@
 ## 1.2.6
 
 ### Added
+
 - local build and push scripts to git
 - git release and tigger git action to publish npm the new version
 
 ### Fixed
 
 - img-swipe alt null not show title
+- tag's group-image remove container class
 
 ### Change
+
 - uri utils param sync
 
 ## 1.2.5
