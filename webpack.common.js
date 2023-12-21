@@ -1,6 +1,6 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const WebpackObfuscator = require('webpack-obfuscator')
+// const WebpackObfuscator = require('webpack-obfuscator')
 
 module.exports = {
     target: 'node',
@@ -16,7 +16,7 @@ module.exports = {
         },
     },
     externals: {
-        lodash: 'lodash',
+        // lodash: 'lodash',
         'hexo-util': 'hexo-util',
         '@adobe/css-tools': '@adobe/css-tools',
         'hexo-pagination': 'hexo-pagination',
@@ -42,14 +42,14 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new WebpackObfuscator(
+        /* new WebpackObfuscator(
             {
                 trasnformObjectKeys: true,
                 rotateStringArray: true,
                 roatetStringArrayEnable: true,
             },
             ['excluded_bundle_name.js']
-        ),
+        ), */
         /* new webpack.DefinePlugin({
             'import.meta.resolve': 'require.resolve'
         }), */

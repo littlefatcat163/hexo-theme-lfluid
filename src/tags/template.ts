@@ -1,7 +1,6 @@
 import path from 'path'
 import { readYml } from '../utils/ymlConf'
 import { vueToHtml, readVue } from '../utils/vueTsr'
-import { uriFor } from '../../templates/utils/uri'
 
 const template = (args: string[]) => {
     const [tmpDir, tmpFile, dataFile] = args
@@ -11,9 +10,7 @@ const template = (args: string[]) => {
     const data = readYml(dataPath)
 
     if (/\.vue$/.test(tmpFile)) {
-        return vueToHtml(readVue(tmpPath)!, data, {
-            uriFor,
-        })
+        return vueToHtml(readVue(tmpPath)!, data)
     }
     return hexo.render.render({ path: tmpPath }, data)
 }

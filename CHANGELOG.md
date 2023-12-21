@@ -4,6 +4,8 @@
 
 - local build and push scripts to git
 - git release and tigger git action to publish npm the new version
+- template vue method move to vueTsr, there is golbal util
+- new tag's tab
 
 ### Fixed
 
