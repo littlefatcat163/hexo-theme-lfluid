@@ -4,30 +4,26 @@ import type { Tab } from '../../types/tag'
 import { noEndingArgs } from '../utils/hexoTagArgs'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
-let key: string = ''
-
-let stashs: Tab[] = []
+const stashMap: Tab = new Map()
 
 function tab(args: string[], content: string) {
     const { arr, content: name } = noEndingArgs(args)
-    if (arr.includes('start')) {
-        const keyParam = arr.find(item => /^key=/.test(item))
-        if (!_.isEmpty(keyParam)) {
-            key = keyParam!.split('=')[1]
-        }
-    }
-    if (_.isEmpty(key)) {
+    const [ id ] = arr
+    if (_.isEmpty(id)) {
         return
     }
+    const stashs = stashMap.get(id) || []
     stashs.push({
         name: name!,
         content: hexo.render.renderSync({ text: content }),
     })
-    if (arr.includes('end')) {
+    if (arr.includes('finish')) {
+        stashMap.delete(id)
         const tabs = stashs
-        stashs = []
         const tmpPath = path.join(hexo.theme_dir, 'templates', 'tab.vue')
-        return vueToHtml(readVue(tmpPath)!, { tabs, key })
+        return vueToHtml(readVue(tmpPath)!, { tabs, key: id })
+    } else {
+        stashMap.set(id, stashs)
     }
     return
 }

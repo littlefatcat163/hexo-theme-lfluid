@@ -5,12 +5,13 @@
 - local build and push scripts to git
 - git release and tigger git action to publish npm the new version
 - template vue method move to vueTsr, there is golbal util
-- new tag's tab
+- new tag's tab, and support promise for other tag
 
 ### Fixed
 
 - img-swipe alt null not show title
 - tag's group-image remove container class
+- tag's tab use map to keep stash id, because the tag's function is no order for runtime
 
 ### Change
 
