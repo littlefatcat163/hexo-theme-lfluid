@@ -1,4 +1,9 @@
-export type Tab = Map<
+export type Tab = {
+    name: string
+    content: string
+}
+
+export type TabStash = Map<
     string,
     {
         name: string

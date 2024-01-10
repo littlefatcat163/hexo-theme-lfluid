@@ -1,10 +1,10 @@
 import path from 'path'
 import _ from 'lodash'
-import type { Tab } from '../../types/tag'
+import type { TabStash } from '../../types/tag'
 import { noEndingArgs } from '../utils/hexoTagArgs'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
-const stashMap: Tab = new Map()
+const stashMap: TabStash = new Map()
 
 function tab(args: string[], content: string) {
     const { arr, content: name } = noEndingArgs(args)
