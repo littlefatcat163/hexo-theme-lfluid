@@ -15,7 +15,7 @@ function tab(args: string[], content: string) {
     const stashs = stashMap.get(id) || []
     stashs.push({
         name: name!,
-        content: hexo.render.renderSync({ text: content }),
+        content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
     })
     if (arr.includes('finish')) {
         stashMap.delete(id)
