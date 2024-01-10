@@ -4,16 +4,46 @@ const hasKeyword = (arr: string[], kw: string) => {
     return arr.some((item) => item === kw)
 }
 
+const bgClasses = (arr: string[], type: string) => {
+    if (hasKeyword(arr, 'bg')) {
+        return ['px-1', `text-bg-${type}`]
+    }
+    return []
+}
+
+const emphasisClasses = (arr: string[], type: string) => {
+    if (hasKeyword(arr, 'bg')) {
+        return []
+    }
+    if (hasKeyword(arr, 'emphasis')) {
+        return [`text-${type}-emphasis`]
+    }
+    return []
+}
+
+const typeClasses = (arr: string[], type: string) => {
+    if (hasKeyword(arr, 'bg') || hasKeyword(arr, 'emphasis')) {
+        return []
+    }
+    const cls = [`text-${type}`]
+    if (['warning', 'info', 'light'].includes(type)) {
+        cls.push('bg-dark')
+    }
+    if (['dark'].includes(type)) {
+        cls.push('bg-white')
+    }
+    return cls
+}
+
 const font = (args: string[]) => {
     const { arr, content } = noEndingArgs(args)
     const classes = []
     const [type] = arr
+
     // 1. 出现 bg 表示当前颜色作用到背景上
-    if (hasKeyword(arr, 'bg')) {
-        classes.push(`text-bg-${type}`)
-    } else {
-        classes.push(`text-${type}`)
-    }
+    classes.push(...bgClasses(arr, type))
+    classes.push(...emphasisClasses(arr, type))
+    classes.push(...typeClasses(arr, type))
 
     // 2. 出现 b 表示粗体
     if (hasKeyword(arr, 'b')) {
@@ -26,9 +56,7 @@ const font = (args: string[]) => {
         classes.push(`fs-${size}`)
     }
 
-    return `<font class="${classes.join(
-        ' '
-    )}" style="padding: 0 0.25rem">${content}</font>`
+    return `<font class="${classes.join(' ')}">${content}</font>`
 }
 
 // {% font warning b @text %}
