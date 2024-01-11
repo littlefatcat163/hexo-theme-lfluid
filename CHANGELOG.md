@@ -13,7 +13,7 @@
 - tag's group-image remove container class
 - tag's tab use map to keep stash id, because the tag's function is no order for runtime
 - font classes
-- code css
+- code css, supoort click to select
 
 ### Change
 
