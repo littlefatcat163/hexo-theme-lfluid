@@ -29,10 +29,10 @@ const groupImage = (args: string[], content: string) => {
 }
 
 /*
-  {% groupimage total n1-n2-n3-... %}
+  {% gi %}
   ![](url)
   ![](url)
   ![](url)
-  {% endgroupimage %}
+  {% endgi %}
  */
 hexo.extend.tag.register('gi', groupImage, { ends: true })
