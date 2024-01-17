@@ -66,4 +66,8 @@ search:
   title: '搜尋'
   keyword: '關鍵字'
 
+noun:
+  prompt: '解析說明'
+  more: '點擊查看更多'
+
 noscript_warning: 'LNote 在允許 JavaScript 運行的環境下瀏覽效果更佳'

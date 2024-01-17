@@ -7,10 +7,23 @@
     --bs-btn-line-height 1
 .lnote-popover
     --bs-popover-border-color var(--bs-primary)
-    --bs-popover-header-bg var(--bs-primary)
-    --bs-popover-header-color var(--bs-white)
-    --bs-popover-body-padding-x 1rem
-    --bs-popover-body-padding-y .5rem
+    --bs-popover-body-padding-x 0
+    --bs-popover-body-padding-y 0
+    --bs-popover-bg transparent
+    &.secondary
+      --bs-popover-border-color var(--bs-secondary)
+    &.info
+      --bs-popover-border-color var(--bs-info)
+    &.success
+      --bs-popover-border-color var(--bs-success)
+    &.warning
+      --bs-popover-border-color var(--bs-warning)
+    &.danger
+      --bs-popover-border-color var(--bs-danger)
+    &.light
+      --bs-popover-border-color var(--bs-light)
+    &.dark
+      --bs-popover-border-color var(--bs-dark)
 
 // note
 .note

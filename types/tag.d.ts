@@ -1,3 +1,13 @@
+export type Type =
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
+
 export type Tab = {
     name: string
     content: string
@@ -10,3 +20,12 @@ export type TabStash = Map<
         content: string
     }[]
 >
+
+export type NounContent = {
+    promptText: string
+    moreText: string
+    type: Type
+    title?: string
+    text: string
+    link?: string
+}

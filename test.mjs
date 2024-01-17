@@ -53,7 +53,11 @@ async function test() {
     const app = createSSRApp({
         template: m[1],
         // template: tmp,
-        data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'}),
+        data: () => ({
+            message: 'testing',
+            abc: false,
+            hh: '<div>asd</div>',
+            a: {test: 'testing'}}),
         methods: {
             toImgUrl(uri) {
                 return `xxx/${uri}`
@@ -75,7 +79,13 @@ async function test() {
         data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'}),
         // components: []
     }) */
-    const p = await renderToString(app, {data: () => ({message: 'testing', abc: false, hh: '<div>asd</div>'})})
+    const p = await renderToString(app, {data: () => (
+        {
+            message: 'testing',
+            abc: false,
+            hh: '<div>asd</div>',
+            a: {test: 'testing'}
+        })})
     console.log(p)
     /* const s = await ssrRenderComponent(tmp)
     console.log(s) */

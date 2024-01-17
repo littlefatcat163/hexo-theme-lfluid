@@ -66,4 +66,8 @@ search:
   title: 'Search'
   keyword: 'Keyword'
 
+noun:
+  prompt: 'Parsing instructions'
+  more: 'Click here to see more'
+
 noscript_warning: 'LNote works best with JavaScript enabled'

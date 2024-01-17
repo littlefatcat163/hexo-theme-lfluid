@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lnote template</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css">
+    <style>
+        .lnote-noun {
+            --bs-popover-border-color: var(--bs-primary);
+            --bs-popover-body-padding-x: 0;
+            --bs-popover-body-padding-y: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // data-bs-title="title"
+        document.body.innerHTML = 
+            `
+            <button
+                type="button"
+                class="btn btn-link link-primary"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun primary"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-primary">
+                        <div class="card-header text-bg-primary">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+                primary
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-secondary"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun secondary"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-secondary">
+                        <div class="card-header text-bg-secondary">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+                secondary
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-success"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun success"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-success">
+                        <div class="card-header text-bg-success">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            success
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-danger"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun danger"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-danger">
+                        <div class="card-header text-bg-danger">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            danger
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-info"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun info"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-info">
+                        <div class="card-header text-bg-info">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            info
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-warning"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun warning"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-warning">
+                        <div class="card-header text-bg-warning">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            warning
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-light"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun light"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-light">
+                        <div class="card-header text-bg-light">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            light
+            </button>
+            <button
+                type="button"
+                class="btn btn-link link-dark"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="right"
+                data-bs-custom-class="lnote-noun dark"
+                data-bs-html="true"
+                data-bs-content='
+                    <div class="card border-dark">
+                        <div class="card-header text-bg-dark">术语说明</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                            <a href="#" class="card-link link-dark">更多</a>
+                        </div>
+                    </div>
+                '
+            >
+            dark
+            </button>
+            `
+        ;
+        const popoverTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="popover"]'
+        )
+        const popoverList = [...popoverTriggerList].map(
+            (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+        )
+    </script>
+</body>
+</html>
