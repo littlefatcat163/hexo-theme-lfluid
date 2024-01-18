@@ -7,7 +7,17 @@ function runtimeProjectInfo() {
     return JSON.parse(fs.readFileSync(projectPath, 'utf-8'))
 }
 
+function linkIsCDN(url: string) {
+    if (/^https*:\/\//.test(url) || /^\/\//.test(url)) {
+        return true
+    }
+    return false
+}
+
 export function uriFor(uris: string[]) {
+    if (uris.length === 1 && linkIsCDN(uris[0])) {
+        return uris[0]
+    }
     const { name } = runtimeProjectInfo()
     return ['', name, ...uris].join('/')
 }
