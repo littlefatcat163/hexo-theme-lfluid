@@ -1,7 +1,7 @@
 <template>
     <button
         type="button"
-        :class="['btn', 'btn-link', `link-${type}`, 'lnote-popover-btn']"
+        :class="['btn', 'btn-link', `link-${type}`, typeBgClass(type), 'lnote-popover-btn']"
         data-bs-toggle="popover"
         data-bs-trigger="hover focus"
         data-bs-placement="right"
@@ -17,6 +17,7 @@
 </template>
 
 <script lang="ts" setup>
+import { typeBgClass } from './utils/uri'
 import type { Type } from '../types/tag'
 const type: Type = 'primary'
 const content = ''

@@ -27,4 +27,13 @@ describe('test readYml', () => {
         ]
         expect(readYml(filePath, false)).toEqual(res)
     })
+
+    test('error', () => {
+        const filePath = path.join(__dirname, '')
+        const res = [
+            { a: { name: 'a', value: 'a' } },
+            { b: { name: 'b', value: 'b' } },
+        ]
+        expect(readYml(filePath, true)).not.toEqual(res)
+    })
 })

@@ -30,7 +30,7 @@ const typeClasses = (arr: string[], type: string) => {
         cls.push('bg-dark')
     }
     if (['dark'].includes(type)) {
-        cls.push('bg-white')
+        cls.push('bg-light')
     }
     return cls
 }

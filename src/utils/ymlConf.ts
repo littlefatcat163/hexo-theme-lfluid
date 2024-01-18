@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import yaml from 'yaml'
+import _ from 'lodash'
 
 /**
  * @description 读取yml配置
@@ -9,7 +10,7 @@ import yaml from 'yaml'
  * @returns 
  */
 export function readYml(filePath: string, merge = true): any {
-    if (!fs.existsSync(filePath)) {
+    if (_.isEmpty(filePath) || !fs.existsSync(filePath)) {
         return
     }
     const stat = fs.statSync(filePath)
@@ -30,6 +31,9 @@ export function readYml(filePath: string, merge = true): any {
     }
     const data = {}
     dirs.forEach((dir) => {
+        if (!dir.isFile() || !/.yml$/.test(dir.name)) {
+            return
+        }
         const res = yaml.parse(
             fs.readFileSync(path.join(filePath, dir.name), 'utf-8')
         )

@@ -16,7 +16,7 @@ nprogress:
 # 文章标题生成目录导航栏
 tocbot:
   js:
-    - //cdn.bootcdn.net/ajax/libs/tocbot/4.9.1/tocbot.min.js
+    - //cdn.bootcdn.net/ajax/libs/tocbot/4.21.1/tocbot.min.js
     - post/toc.js
 
 # 复制代码

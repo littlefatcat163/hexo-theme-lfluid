@@ -1,4 +1,5 @@
 import path from 'path'
+import _ from 'lodash'
 import { readYml } from '../utils/ymlConf'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 import type { NounContent, Type } from '../../types/tag'
@@ -13,15 +14,19 @@ import type { NounContent, Type } from '../../types/tag'
 const noun = async (args: string[]) => {
     const [kw, dataSource] = args
     
+    if (_.isEmpty(kw)|| _.isEmpty(dataSource)) {
+        return '-'
+    }
+
     const tmpPath = path.join(hexo.theme_dir, 'templates', 'noun.vue')
     const dataPath = path.join(hexo.base_dir, dataSource)
     const data = readYml(dataPath, true)
     const vueStr = readVue(tmpPath)
-    if (data == null || vueStr == null) {
+    if (_.isEmpty(data)|| _.isEmpty(vueStr)) {
         return '-'
     }
     const mapping = data[kw]
-    if (mapping == null) {
+    if (_.isEmpty(mapping)) {
         return '-'
     }
 
@@ -32,11 +37,9 @@ const noun = async (args: string[]) => {
 
     const type = mapping.type as Type
     const language = (hexo.theme.i18n.data as any)[hexo.config.language]
-    const promptText = language['noun.prompt']
     const moreText = language['noun.more']
     const nounContent: NounContent = {
         type,
-        promptText,
         moreText,
         title: mapping.title,
         text: mapping.text,
@@ -45,7 +48,7 @@ const noun = async (args: string[]) => {
     const cTmpPath = path.join(hexo.theme_dir, 'templates', 'nounContent.vue')
     const content = await vueToHtml(readVue(cTmpPath)!, { ...nounContent })
 
-    return vueToHtml(vueStr, { type, text, content })
+    return vueToHtml(vueStr!, { type, text, content })
 }
 
 // {% n key dataSource %}

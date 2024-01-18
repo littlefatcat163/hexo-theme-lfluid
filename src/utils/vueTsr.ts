@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { createSSRApp } from 'vue'
 import { renderToString } from '@vue/server-renderer'
-import { uriFor } from '../../templates/utils/uri'
+import { uriFor, typeBgClass } from '../../templates/utils/uri'
 
 export function vueToHtml(tmpStr: string, data: any): Promise<string> {
     const m = tmpStr.match(/<template>([\s\S]*?)<\/template>/)
@@ -10,6 +10,7 @@ export function vueToHtml(tmpStr: string, data: any): Promise<string> {
         data: () => data,
         methods: {
             uriFor,
+            typeBgClass
         },
     })
     return renderToString(app)

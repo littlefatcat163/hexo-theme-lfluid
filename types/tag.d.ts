@@ -22,7 +22,6 @@ export type TabStash = Map<
 >
 
 export type NounContent = {
-    promptText: string
     moreText: string
     type: Type
     title?: string
