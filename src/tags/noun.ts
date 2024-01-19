@@ -12,14 +12,14 @@ import type { NounContent, Type } from '../../types/tag'
  * @returns {Promise} vue
  */
 const noun = async (args: string[]) => {
-    const [kw, dataSource] = args
+    const [kw, dataSource = ''] = args
     
-    if (_.isEmpty(kw)|| _.isEmpty(dataSource)) {
+    if (_.isEmpty(kw)) {
         return '-'
     }
 
     const tmpPath = path.join(hexo.theme_dir, 'templates', 'noun.vue')
-    const dataPath = path.join(hexo.base_dir, dataSource)
+    const dataPath = path.join(hexo.base_dir, 'src', 'data', 'noun', dataSource)
     const data = readYml(dataPath, true)
     const vueStr = readVue(tmpPath)
     if (_.isEmpty(data)|| _.isEmpty(vueStr)) {
