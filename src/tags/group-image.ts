@@ -9,7 +9,7 @@ const groupImage = (args: string[], content: string) => {
     let images: string[] = content.match(/<img[\s\S]*?>/g)!
     const rowCol = igRowCol(images.length)
     if (rowCol === 1) {
-        return imgElGlobalClass(images[0], ['w-100 img-swipe-single'])
+        return `<div class="group-image-container">${imgElGlobalClass(images[0], ['w-100 img-swipe-single'])}</div>`
     }
     if (imgsSameSize) {
         images = images.map((item) => {
