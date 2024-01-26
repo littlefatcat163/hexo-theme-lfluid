@@ -1,38 +1,28 @@
+import path from 'path'
+import _ from 'lodash'
 import { igRowCol } from '../utils/hexoTagArgs'
-import { imgElGlobalClass } from '../utils/htmlEl'
+import { vueToHtml, readVue } from '../utils/vueTsr'
 
 const groupImage = (args: string[], content: string) => {
-    const imgsSameSize = args[0] === 'same'
-
-    content = hexo.render.renderSync({ text: content, engine: 'markdown' })
-
-    let images: string[] = content.match(/<img[\s\S]*?>/g)!
-    const rowCol = igRowCol(images.length)
-    if (rowCol === 1) {
-        return `<div class="group-image-container">${imgElGlobalClass(images[0], ['w-100 img-swipe-single'])}</div>`
-    }
-    if (imgsSameSize) {
-        images = images.map((item) => {
-            return `<div class="col">${imgElGlobalClass(item)}</div>`
+    const list: { title: string; url: string }[] = []
+    content.split(/\n/).forEach((item) => {
+        const matchs = /!\[(.*?)\]\((.*?)\)/g.exec(item)
+        if (_.isEmpty(matchs)) {
+            return
+        }
+        const [, title, url] = matchs!
+        list.push({
+            title,
+            url,
         })
-    } else {
-        images = images.map((item) => {
-            return `<div class="col"><div class="image-adapter"><div>${imgElGlobalClass(
-                item
-            )}</div></div></div>`
-        })
-    }
+    })
 
-    return `<div class="group-image-container img-swipe-group"><div class="row row-cols-${rowCol} gx-2 gy-2">${images.join(
-        ''
-    )}</div></div>`
+    const rowCol = igRowCol(list.length)
+    const isSameSize = args[0] === 'same'
+
+    const tmpPath = path.join(hexo.theme_dir, 'templates', 'GroupImage.vue')
+    return vueToHtml(readVue(tmpPath)!, { rowCol, isSameSize, list })
 }
 
-/*
-  {% gi %}
-  ![](url)
-  ![](url)
-  ![](url)
-  {% endgi %}
- */
-hexo.extend.tag.register('gi', groupImage, { ends: true })
+// @ts-ignore
+hexo.extend.tag.register('gi', groupImage, { ends: true, async: true })

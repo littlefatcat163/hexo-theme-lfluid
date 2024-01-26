@@ -16,7 +16,7 @@
 - tag's tab use map to keep stash id, because the tag's function is no order for runtime
 - font classes
 - code css, supoort click to select
-- note html replace to vue
+- note html replace to vue, html br p bug for markdown engine
 
 ### Change
 
@@ -24,6 +24,7 @@
 - none 数据路径开放，如果是指定目录的，读取该目录下的yml数据；如果是指定yml文件，则直接读取该文件，减少资源处理，提高IO效率
 - template 修改模板和数据读取路径
 - tab 使用页面path + id 自动适配同一个页面出现的每个tab组，改进
+- group image 替换vue模板
 
 ## 1.2.5
 

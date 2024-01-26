@@ -14,12 +14,19 @@ function linkIsCDN(url: string) {
     return false
 }
 
+/**
+ * @description 图片链接生成
+ *  1. http或https开头的cdn链接，将原样转换回去，且只会返回第一个
+ *  2. 多个链接组合成一个，并在前面添加上当前项目的name
+ * @param {string[]} uris uri组，每一个uri必须带 / 开头，保持和 hexo 图片标签一样
+ * @returns 
+ */
 export function uriFor(uris: string[]) {
     if (uris.length === 1 && linkIsCDN(uris[0])) {
         return uris[0]
     }
     const { name } = runtimeProjectInfo()
-    return ['', name, ...uris].join('/')
+    return ['/', name, ...uris].join('')
 }
 
 export function typeBgClass(type: Type) {
