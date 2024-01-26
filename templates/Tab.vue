@@ -1,11 +1,10 @@
 <template>
     <nav>
         <ul
-            class="nav nav-tabs mb-3 d-flex flex-nowrap overflow-x-auto text-nowrap"
+            class="nav nav-underline mb-3 d-flex flex-nowrap overflow-x-auto text-nowrap border-bottom"
             role="tablist"
-            style="padding-bottom: 1px"
         >
-            <li class="nav-item" v-for="(item, index) in tabs">
+            <li class="nav-item" role="presentation" v-for="(item, index) in tabs">
                 <button
                     data-bs-toggle="tab"
                     role="tab"

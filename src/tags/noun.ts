@@ -18,7 +18,7 @@ const noun = async (args: string[]) => {
         return '-'
     }
 
-    const tmpPath = path.join(hexo.theme_dir, 'templates', 'noun.vue')
+    const tmpPath = path.join(hexo.theme_dir, 'templates', 'Noun.vue')
     const dataPath = path.join(hexo.base_dir, 'src', 'data', 'noun', dataSource)
     const data = readYml(dataPath, true)
     const vueStr = readVue(tmpPath)
@@ -45,7 +45,7 @@ const noun = async (args: string[]) => {
         text: mapping.text,
         link: mapping.link,
     }
-    const cTmpPath = path.join(hexo.theme_dir, 'templates', 'nounContent.vue')
+    const cTmpPath = path.join(hexo.theme_dir, 'templates', 'NounContent.vue')
     const content = await vueToHtml(readVue(cTmpPath)!, { ...nounContent })
 
     return vueToHtml(vueStr!, { type, text, content })

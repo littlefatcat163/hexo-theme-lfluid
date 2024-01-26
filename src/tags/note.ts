@@ -1,32 +1,19 @@
-const mappingIcon = (kw: string) => {
-    if (['info', 'success', 'warning', 'danger'].some((item) => item === kw)) {
-        return `<svg class="bi flex-shrink-0 me-2" role="img" width="1.2em" height="1.2em" style="margin-top: 0.2rem"><use xlink:href="#${kw}"/></svg>`
+import path from 'path'
+import { vueToHtml, readVue } from '../utils/vueTsr'
+
+const note = async (args: string[], content?: string) => {
+    let [alertType, iconType] = args
+    if (
+        !['info', 'success', 'warning', 'danger'].some(
+            (item) => item === iconType
+        )
+    ) {
+        iconType = ''
     }
-    return ''
+    const html = await hexo.render.render({ text: content, engine: 'markdown' })
+    const tmpPath = path.join(hexo.theme_dir, 'templates', 'Note.vue')
+    return vueToHtml(readVue(tmpPath)!, { alertType, iconType, html })
 }
 
-const note = (args: string[], content?: string) => {
-    const alertType = args[0] || 'info'
-    const iconType = args[1]
-    const iconHTML = mappingIcon(iconType)
-    if (iconHTML != '') {
-        return `<div class="note alert alert-${alertType} d-flex align-items-top" role="alert">
-            ${iconHTML}
-            <div>
-            ${hexo.render
-                .renderSync({ text: content, engine: 'markdown' })
-                .split('\n')
-                .join('')}
-            </div>
-          </div>`
-    }
-    return `<div class="note alert alert-${alertType}" role="alert">
-            ${iconHTML}
-            ${hexo.render
-                .renderSync({ text: content, engine: 'markdown' })
-                .split('\n')
-                .join('')}
-          </div>`
-}
-
-hexo.extend.tag.register('note', note, { ends: true })
+// @ts-ignore
+hexo.extend.tag.register('note', note, { ends: true, async: true })

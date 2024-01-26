@@ -7,6 +7,7 @@
 - template vue method move to vueTsr, there is golbal util
 - new tag's tab, and support promise for other tag
 - 新增src目录，用于高级版本开发专用
+- 新增对话框组件，方便深入对话场景
 
 ### Fixed
 
@@ -15,13 +16,14 @@
 - tag's tab use map to keep stash id, because the tag's function is no order for runtime
 - font classes
 - code css, supoort click to select
+- note html replace to vue
 
 ### Change
 
 - uri utils param sync
 - none 数据路径开放，如果是指定目录的，读取该目录下的yml数据；如果是指定yml文件，则直接读取该文件，减少资源处理，提高IO效率
 - template 修改模板和数据读取路径
-- tab 使用页面path + id 自动适配同一个页面出现的每个tab组
+- tab 使用页面path + id 自动适配同一个页面出现的每个tab组，改进
 
 ## 1.2.5
 

@@ -5,44 +5,44 @@ import { noEndingArgs } from '../utils/hexoTagArgs'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
 const stashMap: TabStash = new Map()
+const tabGidStashMap: Map<string, number> = new Map()
 
 hexo.on('generateBefore', () => {
     stashMap.clear()
+    tabGidStashMap.clear()
 })
 
-/**
- * @description tab 标签页
- * @param {string[]} args 数组
- * - groupId 标记出当前所在的tab所属的组，必须是在当前所在页面唯一的，不重复的
- * - finish 结束标记，表示tab已经结束了
- * - @ tab name 标签名
- * @param {string} content markdown
- * @returns
- */
-function tab(args: string[], content: string) {
+function tabs(args: string[]) {
     // @ts-ignore
-    const { path: urlPath } = this
-    const { arr, content: name } = noEndingArgs(args)
-    const [groupId] = arr
-    if (_.isEmpty(groupId)) {
-        return '-'
-    }
-    const id = `${urlPath}-${groupId}`
+    const { path: id } = this
     const stashs = stashMap.get(id) || []
-    stashs.push({
-        name: name!,
-        content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
-    })
-    if (arr.includes('finish')) {
+    if (args.includes('finish')) {
         stashMap.delete(id)
+        const groupId = tabGidStashMap.get(id) || 1
         const tabs = stashs
-        const tmpPath = path.join(hexo.theme_dir, 'templates', 'tab.vue')
-        return vueToHtml(readVue(tmpPath)!, { tabs, key: id })
+        const tmpPath = path.join(hexo.theme_dir, 'templates', 'Tab.vue')
+        tabGidStashMap.set(id, groupId + 1)
+        return vueToHtml(readVue(tmpPath)!, { tabs, key: groupId })
     } else {
         stashMap.set(id, stashs)
     }
     return ''
 }
 
+function tabPane(args: string[], content: string) {
+    // @ts-ignore
+    const { path: id } = this
+    const { content: name } = noEndingArgs(args)
+    const stashs = stashMap.get(id) || []
+    stashs.push({
+        name: name!,
+        content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
+    })
+    stashMap.set(id, stashs)
+    return ''
+}
+
 // @ts-ignore
-hexo.extend.tag.register('tab', tab, { ends: true, async: true })
+hexo.extend.tag.register('tabs', tabs, { ends: false, async: true })
+// @ts-ignore
+hexo.extend.tag.register('tabpane', tabPane, { ends: true, async: true })
