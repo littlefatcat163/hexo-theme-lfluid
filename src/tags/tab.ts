@@ -1,30 +1,30 @@
 import path from 'path'
 import _ from 'lodash'
-import type { TabStash } from '../../types/tag'
+import type { Tab } from '../../types/tag'
 import { noEndingArgs } from '../utils/hexoTagArgs'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
-const stashMap: TabStash = new Map()
+const tabStashMap: Map<string, Tab[]> = new Map()
 const tabGidStashMap: Map<string, number> = new Map()
 
 hexo.on('generateBefore', () => {
-    stashMap.clear()
+    tabStashMap.clear()
     tabGidStashMap.clear()
 })
 
 function tabs(args: string[]) {
     // @ts-ignore
     const { path: id } = this
-    const stashs = stashMap.get(id) || []
+    const stashs = tabStashMap.get(id) || []
     if (args.includes('finish')) {
-        stashMap.delete(id)
+        tabStashMap.delete(id)
         const groupId = tabGidStashMap.get(id) || 1
         const tabs = stashs
         const tmpPath = path.join(hexo.theme_dir, 'templates', 'Tab.vue')
         tabGidStashMap.set(id, groupId + 1)
         return vueToHtml(readVue(tmpPath)!, { tabs, key: groupId })
     } else {
-        stashMap.set(id, stashs)
+        tabStashMap.set(id, stashs)
     }
     return ''
 }
@@ -33,12 +33,12 @@ function tabPane(args: string[], content: string) {
     // @ts-ignore
     const { path: id } = this
     const { content: name } = noEndingArgs(args)
-    const stashs = stashMap.get(id) || []
+    const stashs = tabStashMap.get(id) || []
     stashs.push({
         name: name!,
         content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
     })
-    stashMap.set(id, stashs)
+    tabStashMap.set(id, stashs)
     return ''
 }
 

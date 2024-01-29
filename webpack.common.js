@@ -25,6 +25,7 @@ module.exports = {
         systeminformation: 'systeminformation',
         // vue: 'vue',
         '@vue/server-renderer': '@vue/server-renderer',
+        '@vue/compiler-sfc': '@vue/compiler-sfc',
         'lnote-esm': 'lnote-esm',
         nunjucks: 'nunjucks',
     },

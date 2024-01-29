@@ -13,18 +13,18 @@ export type Tab = {
     content: string
 }
 
-export type TabStash = Map<
-    string,
-    {
-        name: string
-        content: string
-    }[]
->
-
 export type NounContent = {
     moreText: string
     type: Type
     title?: string
     text: string
     link?: string
+}
+
+
+export type ChatRole = 'sender' | 'responder'
+export type Chat = {
+    role: ChatRole
+    name: string
+    content: string
 }

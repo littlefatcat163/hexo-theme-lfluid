@@ -53,55 +53,23 @@
       z-index 2
 
 // chat
-.chat
-  header
-    padding-bottom: 6px
-  .sender, .responder
-    position: relative
-    background-color: var(--chat-sender)
-    margin: 30px 56px 40px
-    padding: 0
-    border-radius: 6px
-    display: flex
-    background-color: transparent
-    &::before
-      content: attr(title)
-      position: absolute
-      top: -28px
-      font-size: 0.8rem
-      font-weight: bold
-      text-decoration-line: underline
-      cursor: pointer
-      opacity: 0.65
-    &::after
-      content: ""
-      display: block
-      width: 40px
-      height: 40px
-      border-radius: 6px
-      position: absolute
-      top: 0px
-    > p
-      background-color: var(--chat-sender)
+.chats
+  .chat-avatar
+    width: 2.8rem
+    height: 2.8rem
+  .chat-name
+    font-size: 0.8rem
+    line-height: 1
+    max-width: 84%
+    white-space: nowrap
+    text-overflow: ellipsis
+  .chat-content
+    max-width: 84%
+    :last-child
       margin-bottom: 0
-      padding: 8px 12px
-      word-break: break-all
-      border-radius: 6px
-      max-width: 86%
-  .sender
-    &::before
-      left: -50px
-    &::after
-      background: url(/blog/img/xinzhizhu.jpg) no-repeat center/100%
-      left: -50px
-  .responder
-    background-color: transparent
-    text-align: left
-    justify-content: end
-    &::before
-      right: -50px
-    &::after
-      background: url(/blog/img/fengjian.jpg) no-repeat center/100%
-      right: -52px
-    > p
-      background-color: var(--the-chat-responder)
+  .chat-sender
+    .chat-content
+      background-color: var(--chat-sender)
+  .chat-responder
+    .chat-content
+      background-color: var(--chat-responder)

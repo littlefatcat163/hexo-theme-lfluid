@@ -7,7 +7,7 @@
 - template vue method move to vueTsr, there is golbal util
 - new tag's tab, and support promise for other tag
 - 新增src目录，用于高级版本开发专用
-- 新增对话框组件，方便深入对话场景
+- 新增对话框组件chat，方便深入对话场景
 
 ### Fixed
 

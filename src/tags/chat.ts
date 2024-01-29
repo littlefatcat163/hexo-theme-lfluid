@@ -1,50 +1,46 @@
 import path from 'path'
 import _ from 'lodash'
-import type { TabStash } from '../../types/tag'
+import type { Chat, ChatRole } from '../../types/tag'
 import { noEndingArgs } from '../utils/hexoTagArgs'
 import { vueToHtml, readVue } from '../utils/vueTsr'
 
-const stashMap: TabStash = new Map()
+const chatStashMap: Map<string, Chat[]> = new Map()
 
 hexo.on('generateBefore', () => {
-    stashMap.clear()
+    chatStashMap.clear()
 })
 
-/**
- * @description chat 聊天
- * @param {string[]} args 数组
- * - groupId 标记出当前所在的tab所属的组，必须是在当前所在页面唯一的，不重复的
- * - finish 结束标记，表示tab已经结束了
- * - @ tab name 标签名
- * @param {string} content markdown
- * @returns
- */
-function chat(args: string[], content: string) {
+function chats(args: string[]) {
     // @ts-ignore
-    /* const { path: urlPath } = this
-    const { arr, content: name } = noEndingArgs(args)
-    const [groupId] = arr
-    if (_.isEmpty(groupId)) {
-        return '-'
-    }
-    const id = `${urlPath}-${groupId}`
-    const stashs = stashMap.get(id) || []
-    stashs.push({
-        name: name!,
-        content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
-    })
-    if (arr.includes('finish')) {
-        stashMap.delete(id)
-        const tabs = stashs
-        const tmpPath = path.join(hexo.theme_dir, 'templates', 'tab.vue')
-        return vueToHtml(readVue(tmpPath)!, { tabs, key: id })
+    const { path: id } = this
+    const stashs = chatStashMap.get(id) || []
+    if (args.includes('finish')) {
+        chatStashMap.delete(id)
+        const chats = stashs
+        const tmpPath = path.join(hexo.theme_dir, 'templates', 'Chat.vue')
+        return vueToHtml(readVue(tmpPath)!, { chats })
     } else {
-        stashMap.set(id, stashs)
+        chatStashMap.set(id, stashs)
     }
-    return '' */
-    const tmpPath = path.join(hexo.theme_dir, 'templates', 'Chat.vue')
-    return vueToHtml(readVue(tmpPath)!, {})
+    return ''
+}
+
+async function chatpane(args: string[], content: string) {
+    // @ts-ignore
+    const { path: id } = this
+    const { arr, content: name } = noEndingArgs(args)
+    const [role] = arr
+    const stashs = chatStashMap.get(id) || []
+    stashs.push({
+        role: role as ChatRole,
+        name: name!,
+        content: await hexo.render.render({ text: content, engine: 'markdown' }),
+    })
+    chatStashMap.set(id, stashs)
+    return ''
 }
 
 // @ts-ignore
-hexo.extend.tag.register('chat', chat, { ends: true, async: true })
+hexo.extend.tag.register('chats', chats, { ends: false, async: true })
+// @ts-ignore
+hexo.extend.tag.register('chatpane', chatpane, { ends: true, async: true })

@@ -1,12 +1,14 @@
 import fs from 'fs'
 import { createSSRApp } from 'vue'
 import { renderToString } from '@vue/server-renderer'
+import { parse } from '@vue/compiler-sfc'
 import { uriFor, typeBgClass } from '../../templates/utils/uri'
 
 export function vueToHtml(tmpStr: string, data: any): Promise<string> {
-    const m = tmpStr.match(/<template>([\s\S]*?)<\/template>/)
+    const tsr = parse(tmpStr)
+    // const m = tmpStr.match(/<template>([\s\S]*?)<\/template>/)
     const app = createSSRApp({
-        template: m![1],
+        template: tsr.descriptor!.template!.content,
         data: () => data,
         methods: {
             uriFor,
