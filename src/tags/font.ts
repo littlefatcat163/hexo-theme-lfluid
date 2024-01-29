@@ -56,7 +56,7 @@ const font = (args: string[]) => {
         classes.push(`fs-${size}`)
     }
 
-    return `<font class="${classes.join(' ')}">${content}</font>`
+    return `<span class="${classes.join(' ')}">${content}</span>`
 }
 
 // {% font warning b @text %}
