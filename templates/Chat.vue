@@ -1,8 +1,5 @@
 <template>
     <article class="chats">
-        <header>
-            <h2>第四阶段：</h2>
-        </header>
         <template v-for="item in chats">
             <section
                 v-if="item.role === 'sender'"

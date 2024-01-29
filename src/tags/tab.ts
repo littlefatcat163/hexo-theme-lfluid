@@ -29,14 +29,14 @@ function tabs(args: string[]) {
     return ''
 }
 
-function tabPane(args: string[], content: string) {
+async function tabPane(args: string[], content: string) {
     // @ts-ignore
     const { path: id } = this
     const { content: name } = noEndingArgs(args)
     const stashs = tabStashMap.get(id) || []
     stashs.push({
         name: name!,
-        content: hexo.render.renderSync({ text: content, engine: 'markdown' }),
+        content: await hexo.render.render({ text: content, engine: 'markdown' }),
     })
     tabStashMap.set(id, stashs)
     return ''
