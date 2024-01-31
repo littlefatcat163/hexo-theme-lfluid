@@ -17,6 +17,7 @@
 - font classes
 - code css, supoort click to select
 - note html replace to vue, html br p bug for markdown engine
+- nonu background for card body
 
 ### Change
 

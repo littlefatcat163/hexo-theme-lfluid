@@ -1,7 +1,7 @@
 <template>
     <button
         type="button"
-        :class="['btn', 'btn-link', `link-${type}`, typeBgClass(type), 'lnote-popover-btn']"
+        :class="['btn', 'btn-link', `text-${type}-emphasis`, 'lnote-popover-btn']"
         data-bs-toggle="popover"
         data-bs-trigger="hover focus"
         data-bs-placement="right"

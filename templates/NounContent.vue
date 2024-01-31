@@ -1,7 +1,7 @@
 <template>
     <div :class="['card', `border-${type}`]">
         <div :class="['card-header', `text-bg-${type}`]">{{ title }}</div>
-        <div class="card-body">
+        <div :class="['card-body', `bg-${type}-subtle`, 'rounded-bottom']">
             <!-- <h5 class="card-title" v-if="title">{{ title }}</h5> -->
             <p class="card-text">
                 {{ text }}
@@ -9,7 +9,7 @@
             <a
                 v-if="link"
                 :href="uriFor([link])"
-                :class="['card-link', `link-${type}`, typeBgClass(type)]"
+                :class="['card-link', `text-${type}-emphasis`]"
             >
                 {{ moreText }}
             </a>
