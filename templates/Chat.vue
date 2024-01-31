@@ -16,7 +16,7 @@
                         {{ item.name }}
                     </div>
                     <div
-                        class="chat-content rounded px-3 py-2"
+                        class="chat-content rounded bg-secondary-subtle px-3 py-2"
                         v-html="item.content"
                     ></div>
                 </div>
@@ -36,7 +36,7 @@
                         {{ item.name }}
                     </div>
                     <div
-                        class="chat-content rounded px-3 py-2"
+                        class="chat-content rounded bg-primary-subtle px-3 py-2"
                         v-html="item.content"
                     ></div>
                 </div>
