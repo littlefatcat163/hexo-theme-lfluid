@@ -26,6 +26,7 @@
 - template 修改模板和数据读取路径
 - tab 使用页面path + id 自动适配同一个页面出现的每个tab组，改进
 - group image 替换vue模板
+- 切换CDN源，提高资源加载效率
 
 ## 1.2.5
 

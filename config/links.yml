@@ -1,59 +1,59 @@
 css: 
-  - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css
+  - //cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css
   - main.css
 js:
-  - //lib.baomitu.com/typed.js/2.0.12/typed.min.js
-  - //cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js
+  - //cdn.staticfile.net/typed.js/2.1.0/typed.umd.min.js
+  - //cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js
   - local-search.js
   - events.js
 
 nprogress:
   css:
-    - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css
+    - //cdn.staticfile.net/nprogress/0.2.0/nprogress.min.css
   js:
-    - //cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js
+    - //cdn.staticfile.net/nprogress/0.2.0/nprogress.min.js
 
 # 文章标题生成目录导航栏
 tocbot:
   js:
-    - //cdn.bootcdn.net/ajax/libs/tocbot/4.21.1/tocbot.min.js
+    - //cdn.staticfile.net/tocbot/4.25.0/tocbot.min.js
     - post/toc.js
 
 # 复制代码
 clipboard:
   js:
-    - //lib.baomitu.com/clipboard.js/latest/clipboard.min.js
+    - //cdn.staticfile.net/clipboard.js/2.0.11/clipboard.min.js
     - post/copying-code.js
 
 # https://photoswipe.com/
 photoswipe:
   esm: true
   css:
-    - //lib.baomitu.com/photoswipe/5.4.2/photoswipe.min.css
+    - //cdn.staticfile.net/photoswipe/5.4.2/photoswipe.min.css
   js:
     # - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe.umd.min.js
     # - //lib.baomitu.com/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js
     - post/img-swipe.js
 
-viewerjs:
-  css:
-    - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.css
-  js:
-    - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.js
-    - post/view-imgs.js
+# viewerjs:
+#   css:
+#     - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.css
+#   js:
+#     - //lib.baomitu.com/viewerjs/1.11.6/viewer.min.js
+#     - post/view-imgs.js
 
 # https://kangkai124.github.io/fancybox/
-fancybox:
-  css:
-    - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css
-  js:
-    - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js
-    - post/play-imgs.js
+# fancybox:
+#   css:
+#     - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css
+#   js:
+#     - //lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js
+#     - post/play-imgs.js
 
 # 流程图
 mermaid:
   js:
-    - //lib.baomitu.com/mermaid/10.6.1/mermaid.min.js
+    - //cdn.staticfile.net/mermaid/10.7.0/mermaid.min.js
     - post/mermaiding.js
 
 
