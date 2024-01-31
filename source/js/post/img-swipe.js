@@ -1,7 +1,7 @@
-import PhotoSwipeLightbox from '//lib.baomitu.com/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js'
+import PhotoSwipeLightbox from '//cdn.staticfile.net/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js'
 
 const lightbox = new PhotoSwipeLightbox({
-    pswpModule: () => import('//lib.baomitu.com/photoswipe/5.4.2/photoswipe.esm.min.js'),
+    pswpModule: () => import('//cdn.staticfile.net/photoswipe/5.4.2/photoswipe.esm.min.js'),
     wheelToZoom: true,
 })
 const groups = []
