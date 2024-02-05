@@ -1,6 +1,6 @@
 <template>
     <div :class="['card', `border-${type}`]">
-        <div :class="['card-header', `text-bg-${type}`]">{{ title }}</div>
+        <div :class="['card-header', 'fw-bold', `text-bg-${type}`]">{{ title }}</div>
         <div :class="['card-body', `bg-${type}-subtle`, 'rounded-bottom']">
             <!-- <h5 class="card-title" v-if="title">{{ title }}</h5> -->
             <p class="card-text">
