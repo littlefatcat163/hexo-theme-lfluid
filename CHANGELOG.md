@@ -1,3 +1,10 @@
+## 1.2.8
+
+### Added
+
+- qrcode for each page [#6](https://github.com/littlefatcat163/hexo-theme-lnote/issues/6)
+
+
 ## 1.2.7
 
 ### Fixed
