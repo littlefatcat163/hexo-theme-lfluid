@@ -1,3 +1,9 @@
+## 1.2.7
+
+### Fixed
+
+- lnote-esm for runtime error
+
 ## 1.2.6
 
 ### Added
