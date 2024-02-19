@@ -1,3 +1,4 @@
+// @ts-nocheck
 hexo.extend.helper.register('point_injected', function (type) {
     return (
         hexo.theme.config.injects[type] &&
