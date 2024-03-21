@@ -1,11 +1,11 @@
 import path from 'path'
 
-hexo.extend.filter.register('before_generate', function () {
+/* hexo.extend.filter.register('before_generate', function () {
     if (hexo.config.__AUTH_LNOTE) {
         return
     }
     process.exit()
-})
+}) */
 
 hexo.extend.filter.register(
     'theme_inject',

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { validateLicenses, hexoConsoleEnc } from 'create-lnote/src/generate'
 
 const { start, build } = hexoConsoleEnc()
