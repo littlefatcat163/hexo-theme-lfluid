@@ -6,13 +6,13 @@ module.exports = merge(common, {
     mode: 'production',
     // mode: 'development',
     plugins: [
-        new WebpackObfuscator(
-            {
-                trasnformObjectKeys: true,
-                rotateStringArray: true,
-                roatetStringArrayEnable: true,
-            },
-            ['excluded_bundle_name.js']
-        ),
+        // new WebpackObfuscator(
+        //     {
+        //         trasnformObjectKeys: true,
+        //         rotateStringArray: true,
+        //         roatetStringArrayEnable: true,
+        //     },
+        //     ['excluded_bundle_name.js']
+        // ),
     ]
 });
